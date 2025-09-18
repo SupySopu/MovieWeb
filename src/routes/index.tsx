@@ -1,4 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
+import HomeAddBtn from '../components/HomeAddBtn/HomeAddBtn'
+import Moviecard from '../components/MovieCard/Moviecard'
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -6,8 +8,11 @@ export const Route = createFileRoute('/')({
 
 function Index() {
   return (
-    <div className="p-2">
-      <h3>Welcome Home!</h3>
+    <div className="home">
+      <h1>Search for any <span>movie</span>!</h1>
+      <p>In this website you can search for information about any movie you want to see</p>
+      <HomeAddBtn/>
+      <Moviecard />
     </div>
   )
 }

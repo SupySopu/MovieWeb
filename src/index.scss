@@ -2,13 +2,80 @@
 @import "./scss/_mixins.scss";
 @import "./scss/_variables.scss";
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-* {
-    font-family: "Poppins", sans-serif;
+body {
+    background: conic-gradient(
+    from 180deg at 50% 110%,
+    #260952 29%,
+    #4E098F 50%,
+    #8721AB 73%,
+    #BC2FDF 95%
+  );
+    color: $font-default-color;
 }
 
-body {
-    background-color: $base-color;
-    color: $font-default-color;
+.navbar {
+    a {
+    color: $font-default-color;  
+    font-size: 1.5rem;     
+    padding: 1.8rem;     
+    text-decoration: none;
+
+        &:hover {
+        text-decoration: $font-default-color;
+        opacity: 0.8;
+        }
+    }  
+
+    a.active {
+      font-weight: bold;
+    }
+}
+
+.home {
+
+    h1{
+        filter: drop-shadow(rgb(0, 0, 0) 0rem 4px 6px);
+    }
+
+    span{
+        color: $secondary-color;
+    }
+
+    p {
+        font-size: 1.8rem;
+        font-weight: 400;
+        font-style: normal;
+        filter: drop-shadow(rgb(0, 0, 0) 0rem 4px 6px);
+    }
+
+    button{
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: $base-color;
+        background-color: $highlight-color;
+        border-radius: 50px;
+        border-color: $font-default-color;
+        padding: 10px 30px 10px 30px;
+    }
+}
+
+.movie-card{
+    margin: 2%;
+
+    .improv-img{
+        background-color: $secondary-color;
+        height: 200px;
+        width: 250px;
+        border-radius: 16px;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    .info{
+        display: flex;
+        flex-direction: row;
+        color: $secondary-color;
+    }
 }
