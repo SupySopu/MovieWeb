@@ -9,6 +9,9 @@ const RootLayout = () => (
       </Link>{' '}
       <Link to="/favorites" className="[&.active]:font-bold">
         Favorites
+      </Link>{' '}
+      <Link to="/addMovie" className="[&.active]:font-bold">
+        Btn
       </Link>
     </div>
     <hr />
