@@ -2,15 +2,88 @@
 @import "./scss/_mixins.scss";
 @import "./scss/_variables.scss";
 
-body {
+.start {
+    width: 99vw; /* 100% of the viewport's width */
+    height: 100vh; 
     background: conic-gradient(
-    from 180deg at 50% 110%,
-    #260952 29%,
-    #4E098F 50%,
-    #8721AB 73%,
-    #BC2FDF 95%
-  );
+        from 180deg at 50% 110%,
+        #260952 29%,
+        #4E098F 50%,
+        #8721AB 73%,
+        #BC2FDF 95%
+    );
     color: $font-default-color;
+    margin: 0;
+
+    button{
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: $base-color;
+            background-color: $highlight-color;
+            border-radius: 50px;
+            border-color: $font-default-color;
+            padding: 10px 30px 10px 30px;
+        }
+}
+
+.navbar {
+  padding: 10px;
+  color: white;
+
+    background: conic-gradient(
+      from 180deg at 50% 1710%,
+      #260952 29%,
+      #4E098F 50%,
+      #8721AB 73%,
+      #BC2FDF 95%
+    );
+}
+
+.search{
+    margin: 0;
+    padding-top: 30px;
+    color: $font-default-color;
+    background-color: $base-color;
+
+    .container-movies {
+        display: flex;
+        flex-wrap: wrap;          
+        gap: 10px;
+        row-gap: 0;              
+        justify-content: center; 
+    }
+
+    button{
+        font-weight: bold;
+        color: $base-color;
+        background-color: $highlight-color;
+        padding: 8px 16px;
+        font-size: 1rem;
+        
+        &.filter-btn{
+            border-radius: 50px 0 0 50px;
+        }
+
+        &.enter-btn{
+            border-radius: 0 50px 50px 0;
+        }
+    }
+
+    .search-bar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+
+        input{
+            padding: 8px;
+            font-size: 1rem;
+            width: 40%;
+            border: none;
+            background-color: $base-lighter-color;
+            color: $font-default-color;
+        }
+    } 
 }
 
 .navbar {
@@ -47,20 +120,12 @@ body {
         font-style: normal;
         filter: drop-shadow(rgb(0, 0, 0) 0rem 4px 6px);
     }
-
-    button{
-        font-size: 1.3rem;
-        font-weight: bold;
-        color: $base-color;
-        background-color: $highlight-color;
-        border-radius: 50px;
-        border-color: $font-default-color;
-        padding: 10px 30px 10px 30px;
-    }
 }
 
 .movie-card{
     margin: 2%;
+    margin-bottom: 0%;
+    width: 250px;
 
     .improv-img{
         background-color: $secondary-color;
@@ -71,11 +136,41 @@ body {
 
     h3 {
         font-size: 1.8rem;
+        margin-top: 12px;
+        margin-bottom: 0px;
     }
 
-    .info{
+    .info {
         display: flex;
-        flex-direction: row;
-        color: $secondary-color;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+
+        .info-left {
+            display: flex;
+            align-items: center;
+            gap: 10px; 
+        }
+
+        .info-right {
+            margin: 0;
+            align-items: center;
+        }
     }
+
 }
+
+%icon-style {
+    font-size: 32px;
+}
+
+.icon-star {
+  @extend %icon-style;
+  color: $highlight-color;
+}
+
+.icon-heart {
+  @extend %icon-style;
+  color: $font-default-color;
+}
+

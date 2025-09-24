@@ -3,37 +3,10 @@
 
 * {
     font-family: "Poppins", sans-serif;
+      margin:0;
+  
 }
 
 h1 {
     font-size: 4rem;
-}
-
-/*Corazón*/
-#heart-svg {
-  cursor: pointer;
-  overflow: visible;
-  width: 60px;
-  margin: 20px;
-
-  svg {
-    #heart {
-      transform-origin: center;
-      fill: none;
-      stroke: #000; // borde opcional
-    }
-  }
-}
-
-.checkbox {
-  display: none;
-
-  &:checked + label {
-    svg {
-      #heart {
-        fill: $highlight-color; // el corazón pasa a estar lleno
-        stroke: none;  // opcional: sacamos el borde
-      }
-    }
-  }
 }

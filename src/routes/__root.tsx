@@ -1,19 +1,10 @@
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import NavBar from '../components/NavBar/NavBar'
 
 const RootLayout = () => (
   <>
-    <div className="navbar">
-      <Link to="/" className="">
-        Home
-      </Link>{' '}
-      <Link to="/favorites" className="">
-        Favorites
-      </Link>{' '}
-      <Link to="/addMovie" className="">
-        Add
-      </Link>
-    </div>
+    <NavBar /> 
     <Outlet />
     <TanStackRouterDevtools />
   </>
