@@ -2,6 +2,20 @@
 @import "./scss/_mixins.scss";
 @import "./scss/_variables.scss";
 
+// componentes
+@import "./components/CastTag/CastTag.module.scss";
+@import "./components/ConfigCardBtn/ConfigCard.module.scss";
+@import "./components/FavoriteBtn/FavoriteBtn.module.scss";
+@import "./components/FilterBtn/FilterBtn.module.scss";
+@import "./components/HeartFavorites/HeartFavorites.module.scss";
+@import "./components/HomeAddBtn/HomeAddBtn.module.scss";
+@import "./components/MovieCard/MovieCard.module.scss";
+@import "./components/NavBar/NavBar.module.scss";
+@import "./components/NewReleasesCard/NewReleases.module.scss";
+@import "./components/Pagination/Pagination.module.scss";
+@import "./components/Searchbar/Searchbar.module.scss";
+@import "./components/Tag/Tag.module.scss";
+
 .start {
     width: 100vw; /* 100% of the viewport's width */
     height: 100vh; 
@@ -16,10 +30,22 @@
 
     h1{
         padding-top: 250px;
+        filter: drop-shadow(rgb(0, 0, 0) 0rem 4px 6px);
     }
 
     h1, p, button {
         margin-left: 120px;
+    }
+
+    span{
+        color: $secondary-color;
+    }
+
+    p {
+        font-size: 1.8rem;
+        font-weight: 400;
+        font-style: normal;
+        filter: drop-shadow(rgb(0, 0, 0) 0rem 4px 6px);
     }
 
     button{
@@ -31,27 +57,8 @@
             border-radius: 50px;
             border-color: $font-default-color;
             padding: 10px 30px 10px 30px;
-        }
-}
-
-.navbar {
-    padding: 10px;
-    color: white;
-    position: fixed;
-    top:0;
-    left:0;
-    z-index: 999;
-    width: 99%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-        .navbar-right {
-            display: flex;
-            align-items: center;
-            gap: 10px; 
-        }
     }
+}
 
 .search{
     margin: 0;
@@ -82,109 +89,4 @@
             border-radius: 0 50px 50px 0;
         }
     }
-
-    .search-bar{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-
-        input{
-            padding: 8px;
-            font-size: 1rem;
-            width: 40%;
-            border: none;
-            background-color: $base-lighter-color;
-            color: $font-default-color;
-        }
-    } 
 }
-
-.navbar {
-    a {
-    color: $font-default-color;  
-    font-size: 1.5rem;     
-    padding: 1.8rem;     
-    text-decoration: none;
-
-        &:hover {
-        text-decoration: $font-default-color;
-        opacity: 0.8;
-        }
-    }  
-
-    a.active {
-      font-weight: bold;
-    }
-}
-
-.home {
-
-    h1{
-        filter: drop-shadow(rgb(0, 0, 0) 0rem 4px 6px);
-    }
-
-    span{
-        color: $secondary-color;
-    }
-
-    p {
-        font-size: 1.8rem;
-        font-weight: 400;
-        font-style: normal;
-        filter: drop-shadow(rgb(0, 0, 0) 0rem 4px 6px);
-    }
-}
-
-.movie-card{
-    margin: 2%;
-    margin-bottom: 0%;
-    width: 250px;
-
-    .improv-img{
-        background-color: $secondary-color;
-        height: 200px;
-        width: 250px;
-        border-radius: 16px;
-    }
-
-    h3 {
-        font-size: 1.8rem;
-        margin-top: 12px;
-        margin-bottom: 0px;
-    }
-
-    .info {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-
-        .info-left {
-            display: flex;
-            align-items: center;
-            gap: 10px; 
-        }
-
-        .info-right {
-            margin: 0;
-            align-items: center;
-        }
-    }
-
-}
-
-%icon-style {
-    font-size: 32px;
-}
-
-.icon-star {
-  @extend %icon-style;
-  color: $highlight-color;
-}
-
-.icon-heart {
-  @extend %icon-style;
-  color: $font-default-color;
-}
-

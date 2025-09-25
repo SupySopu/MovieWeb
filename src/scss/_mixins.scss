@@ -1,0 +1,13 @@
+%icon-style {
+    font-size: 32px;
+}
+
+.icon-star {
+  @extend %icon-style;
+  color: $highlight-color;
+}
+
+.icon-heart {
+  @extend %icon-style;
+  color: $font-default-color;
+}
