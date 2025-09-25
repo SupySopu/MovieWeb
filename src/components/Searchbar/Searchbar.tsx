@@ -1,4 +1,3 @@
-import React from 'react'
 import Example from '../FilterBtn/FilterBtn'
 
 export default function Searchbar() {

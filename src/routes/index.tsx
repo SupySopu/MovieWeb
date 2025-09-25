@@ -15,8 +15,8 @@ function Index() {
         <p>In this website you can search for information about any movie you want to see</p>
         <HomeAddBtn/>
       </div>
+      
       <div className="search">
-
         <Searchbar/>
         <div className="container-movies">
           <Moviecard />

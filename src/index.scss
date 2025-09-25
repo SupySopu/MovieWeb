@@ -3,7 +3,7 @@
 @import "./scss/_variables.scss";
 
 .start {
-    width: 99vw; /* 100% of the viewport's width */
+    width: 100vw; /* 100% of the viewport's width */
     height: 100vh; 
     background: conic-gradient(
         from 180deg at 50% 110%,
@@ -13,12 +13,20 @@
         #BC2FDF 95%
     );
     color: $font-default-color;
-    margin: 0;
+
+    h1{
+        padding-top: 250px;
+    }
+
+    h1, p, button {
+        margin-left: 120px;
+    }
 
     button{
             font-size: 1.3rem;
             font-weight: bold;
             color: $base-color;
+            margin-top: 15px;
             background-color: $highlight-color;
             border-radius: 50px;
             border-color: $font-default-color;
@@ -27,17 +35,23 @@
 }
 
 .navbar {
-  padding: 10px;
-  color: white;
+    padding: 10px;
+    color: white;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 999;
+    width: 99%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    background: conic-gradient(
-      from 180deg at 50% 1710%,
-      #260952 29%,
-      #4E098F 50%,
-      #8721AB 73%,
-      #BC2FDF 95%
-    );
-}
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 10px; 
+        }
+    }
 
 .search{
     margin: 0;
