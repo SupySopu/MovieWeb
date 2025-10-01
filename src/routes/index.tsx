@@ -43,6 +43,7 @@ function Index() {
       </div>
 
       <div className='new-releases'>
+        <h1>New Releases</h1>
         <NewReleasesCard />
       </div>
     </div>

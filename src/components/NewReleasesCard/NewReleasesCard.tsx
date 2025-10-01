@@ -1,4 +1,3 @@
-import React from 'react'
 import StarBtn from '../StarBtn/StarBtn'
 import HeartFavorites from '../HeartFavorites/HeartFavorites'
 
@@ -18,7 +17,7 @@ export default function NewReleasesCard() {
             <div className="footer">
             <div className="rating">
                 <StarBtn />
-                <span className="score">7.8</span>
+                <h3 className="score">7.8</h3>
             </div>
                 <HeartFavorites />
             </div>

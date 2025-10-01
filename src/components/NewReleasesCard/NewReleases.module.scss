@@ -2,16 +2,17 @@
     display: flex;
     border-radius: 16px;
     padding: 16px;
-    
+    background-color: rgba(0, 0, 0, 0.25);
+
     width: 420px;
-    height: 220px;
+    height: 200px;
     color: #fff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 
     .poster {
         width: 150px;
         height: 200px;
-        background-color: #a020f0; // Placeholder púrpura
+        background-color: #a020f0;
         border-radius: 8px;
         flex-shrink: 0;
     }
@@ -23,15 +24,15 @@
         justify-content: space-between;
 
         .title {
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 700;
-        margin: 0;
+        margin-top: 10px;
         }
 
         .author {
-        color: #c084fc;
+        color: $secondary-color;
         font-size: 14px;
-        font-weight: 500;
+        font-weight: bold;
         margin: 2px 0 8px 0;
         }
 
@@ -47,10 +48,17 @@
         justify-content: space-between;
         align-items: center;
         margin-top: 10px;
+        gap: 10px;
 
         .rating {
             display: flex;
             align-items: center;
+            color: $secondary-color;
+            gap: 10px;
+
+            .score{
+                font-size: 1.8rem;
+            }
         }
         }
     }
