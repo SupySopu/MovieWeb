@@ -1,3 +1,4 @@
+import { Button } from "@headlessui/react";
 import HeartFavorites from "../HeartFavorites/HeartFavorites";
 import StarBtn from "../StarBtn/StarBtn";
 
@@ -6,8 +7,10 @@ import StarBtn from "../StarBtn/StarBtn";
 export default function Moviecard() {
   return (
     <div className="movie-card">
-        <div className="improv-img"></div>
-        <h3>Movie Card</h3>
+        <Button className="redirect-card">
+          <div className="improv-img"></div>
+          <h3>Movie Card</h3>
+        </Button>
         <div className="info">
             <div className="info-left">
               <StarBtn />

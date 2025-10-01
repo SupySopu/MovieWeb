@@ -4,7 +4,7 @@ import { IoHeartOutline } from "react-icons/io5";
 export default function HeartFavorites() {
   return (
     <>
-    <Button>
+    <Button className="heart-btn">
       <IoHeartOutline className="icon-heart" />
     </Button>
     </>

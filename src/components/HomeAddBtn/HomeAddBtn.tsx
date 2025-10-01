@@ -1,8 +1,9 @@
+import { Button } from "@headlessui/react";
 
 export default function HomeAddBtn() {
   return (
     <>
-        <button>Add your movies</button>
+      <Button className="home-add-btn">Add your movies</Button>
     </>
   )
 }

@@ -39,17 +39,6 @@
             font-style: normal;
             filter: drop-shadow(rgb(0, 0, 0) 0rem 4px 6px);
         }
-
-        button{
-                font-size: 1.3rem;
-                font-weight: bold;
-                color: $base-color;
-                margin-top: 15px;
-                background-color: $highlight-color;
-                border-radius: 50px;
-                border-color: $font-default-color;
-                padding: 10px 30px 10px 30px;
-        }
     }
 
     .img-container {
