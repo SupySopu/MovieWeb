@@ -11,3 +11,21 @@
   @extend %icon-style;
   color: $font-default-color;
 }
+
+%btn-searchbar{
+  font-weight: bold;
+  color: $base-color;
+  background-color: $highlight-color;
+  padding: 8px 16px;
+  font-size: 1rem;
+}
+
+.filter-btn{
+  @extend %btn-searchbar;
+  border-radius: 50px 0 0 50px;
+}
+
+.enter-btn{
+  @extend %btn-searchbar;
+  border-radius: 0 50px 50px 0;
+}
