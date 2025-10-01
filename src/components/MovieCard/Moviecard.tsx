@@ -1,6 +1,8 @@
 import HeartFavorites from "../HeartFavorites/HeartFavorites";
 import StarBtn from "../StarBtn/StarBtn";
 
+// img default en lugar de div
+
 export default function Moviecard() {
   return (
     <div className="movie-card">

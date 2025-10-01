@@ -2,6 +2,9 @@ import { createFileRoute } from '@tanstack/react-router'
 import HomeAddBtn from '../components/HomeAddBtn/HomeAddBtn'
 import Moviecard from '../components/MovieCard/Moviecard'
 import Searchbar from '../components/Searchbar/Searchbar'
+import computer from "../assets/computer.png"
+import NewReleasesCard from '../components/NewReleasesCard/NewReleasesCard'
+import Pagination from '../components/Pagination/Pagination'
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -11,9 +14,17 @@ function Index() {
   return (
     <div className="home">
       <div className="start">
-        <h1>Search for any <span>movie</span>!</h1>
-        <p>In this website you can search for information about any movie you want to see</p>
-        <HomeAddBtn/>
+        
+        <div className='text-container'>
+          <h1>Search for any <span>movie</span>!</h1>
+          <p>In this website you can search for information about any movie you want to see</p>
+          <HomeAddBtn/>
+        </div>
+
+        <div className="img-container">
+          <img src={computer} />
+        </div>
+        
       </div>
       
       <div className="search">
@@ -28,6 +39,11 @@ function Index() {
           <Moviecard />
           <Moviecard />
         </div>
+        <Pagination />
+      </div>
+
+      <div className='new-releases'>
+        <NewReleasesCard />
       </div>
     </div>
   )
