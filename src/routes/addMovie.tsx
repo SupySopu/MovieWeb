@@ -6,7 +6,9 @@ export const Route = createFileRoute('/addMovie')({
 })
 
 function RouteComponent() {
-  return <>
+  return (
+  <div className='add-movie'>
     <AddMovieForm/>
-  </>
+  </div>
+  )
 }

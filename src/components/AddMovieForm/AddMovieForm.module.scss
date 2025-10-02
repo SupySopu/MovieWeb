@@ -1,0 +1,49 @@
+.form-add-movie{
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+
+    label {
+        color: $font-default-color;
+        font-size: 1.3rem;
+        display: block;
+    }
+
+    input{
+        background-color: $base-lighter-color;
+        border:none;
+        border-radius: 8px;
+        padding: 4px 16px 4px 16px;
+        font-size: 1.3rem;
+        color: $font-default-color;
+        margin-bottom: 16px;
+    }
+
+    .og-title-lang-container{
+        display: flex;
+        gap: 16px;
+    }
+
+    .label-input-container{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button{
+        background-color: $highlight-color;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 32px;
+        width: 100px;
+        padding: 8px;
+    }
+
+    .tags-container, .cast-container{
+        margin-top: 8px;
+        display: flex;
+        flex-wrap: wrap; 
+        gap: 8px;
+    }
+}
