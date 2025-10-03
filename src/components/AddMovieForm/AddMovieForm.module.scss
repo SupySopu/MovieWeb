@@ -10,7 +10,7 @@
         display: block;
     }
 
-    input{
+    input, textarea{
         background-color: $base-lighter-color;
         border:none;
         border-radius: 8px;
@@ -22,7 +22,18 @@
 
     .og-title-lang-container{
         display: flex;
-        gap: 16px;
+        width: 100%;
+        gap: 8px;
+
+        .label-input-container{
+            &:first-child{
+                flex: 70%
+            }
+
+            &:last-child{
+                flex: 30%
+            }
+        }
     }
 
     .label-input-container{
@@ -31,7 +42,7 @@
         gap: 10px;
     }
 
-    button{
+    .submit-btn{
         background-color: $highlight-color;
         font-size: 1.2rem;
         font-weight: bold;
@@ -40,10 +51,34 @@
         padding: 8px;
     }
 
+    .cast-btn, .tag-btn{
+        background-color: $highlight-color;
+        border:none;
+        border-radius: 0 8px 8px 0;
+        padding: 4px 16px 4px 16px;
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+    }
+
+    .cast-item, .tag-item{
+        background-color: $highlight-color;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 32px;
+        width: 100px;
+        padding: 8px;
+        margin-bottom: 16px;
+    }
+
+    textarea{
+        height: 10%;
+    }
+
     .tags-container, .cast-container{
         margin-top: 8px;
         display: flex;
-        flex-wrap: wrap; 
+        flex-wrap: wrap;
+        width:auto;
         gap: 8px;
     }
 }

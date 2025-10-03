@@ -1,4 +1,4 @@
-import { Input, Label, Field, Button } from '@headlessui/react';
+import { Input, Label, Field, Button, Textarea } from '@headlessui/react';
 import { useFormik } from 'formik';
 import { useState } from 'react';
 
@@ -97,6 +97,7 @@ export default function AddMovieForm() {
                         type="text"
                         onChange={formik.handleChange}
                         value={formik.values.author}
+                        placeholder="Input your author here..."
                     />
                 </Field>
 
@@ -112,17 +113,18 @@ export default function AddMovieForm() {
                 </Field>
 
                 <Field className='label-input-container'>
-                    <Label htmlFor='releaseDate'>Release Date</Label>
-                    <Input
-                        id="releaseDate"
-                        name="releaseDate"
-                        type="date"
+                    <Label htmlFor='synopsis'>Synopsis</Label>
+                    <Textarea
+                        id="synopsis"
+                        name="synopsis"
                         onChange={formik.handleChange}
-                        value={formik.values.releaseDate}
+                        value={formik.values.synopsis}
+                        placeholder='Input your synopsis here...'
                     />
                 </Field>
 
             <Field className='label-input-container'>
+                <div className="input-search-container">
                 <Label htmlFor='tags'>Tags</Label>
                 <Input 
                     id="tags"
@@ -131,14 +133,15 @@ export default function AddMovieForm() {
                     value={tagInput}
                     onChange={(e) => setTagInput(e.target.value)}
                 />
-                <Button type="button" className='tag-btn' onClick={addTag}>Agregar</Button>
+                <Button type="button" className='tag-btn' onClick={addTag}>X</Button>
+                </div>
 
                 <div className="tags-container">
                     {formik.values.tags.map((tag, id) => (
                         <Button 
                         type="button" 
                         key={id} 
-                        className="tag-btn"
+                        className="tag-item"
                         onClick={() => removeTag(tag)}
                         >
                         {tag} x
@@ -147,31 +150,36 @@ export default function AddMovieForm() {
                 </div>
             </Field>
 
+
             <Field className='label-input-container'>
+                <div className="input-search-container">
                 <Label htmlFor='cast'>Cast</Label>
                 <Input 
                     id="cast"
                     name="cast"
+                    className=""
                     type="text"
                     value={castInput}
                     onChange={(e) => setCastInput(e.target.value)}
                 />
-                <Button type="button" className='cast-btn' onClick={addCast}>Agregar</Button>
+                <Button type="button" className='cast-btn' onClick={addCast}>X</Button>
+                </div>
 
+                    
                 <div className="cast-container">
                     {formik.values.cast.map((cast, id) => (
                         <Button 
-                        type="button" 
-                        key={id} 
-                        className="cast-btn"
-                        onClick={() => removeCast(cast)}
-                        >
-                        {cast} x
-                        </Button>
+                            type="button" 
+                            key={id} 
+                            className="cast-item"
+                            onClick={() => removeCast(cast)}
+                            >
+                            {cast} x
+                        </Button>   
                     ))}
                 </div>
             </Field>
-            <button type="submit">Submit</button>
+            <Button type="submit" className="submit-btn">Submit</Button>
         </form>
     )
 }
