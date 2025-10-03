@@ -1,0 +1,62 @@
+.info-movie-table {
+  border: 2px solid $font-default-color;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: $font-default-color;
+  width: 100vh;
+
+  .top-section {
+    display: flex;
+    justify-content: space-between;
+
+    .score {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .score-label {
+        background-color: $secondary-color;
+        color: $font-default-color;
+        font-weight: bold;
+        font-size: 1.5rem;
+        padding: 0.25rem 1rem;
+      }
+
+      .score-value {
+        font-size: 3rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .info-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+    gap: 1rem; // espacio entre fila de info y tags
+
+  .info-row { 
+    font-size: 1.3rem;
+    display: flex;
+    gap: 1.5rem; // espacio entre cada elemento
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+
+    .tag {
+      background-color: $highlight-color;
+      color: black;
+      padding: 0.25rem 0.75rem;
+      border-radius: 120px;
+      font-weight: 500;
+    }
+  }
+}
+
+}
