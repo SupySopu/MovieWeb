@@ -1,6 +1,15 @@
 .movie-id-index{
-    background-color: $base-color;
+    background-color: $base-lighter-color;
     width: 100%;
     height: 100%;
     padding-top: 100px;
+
+    .info-description{
+        margin: 32px 0 32px 0;
+        font-size: 16px;
+    }
+
+    button{
+        
+    }
 }

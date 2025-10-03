@@ -1,0 +1,18 @@
+.cast-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+
+    .cast-tag {
+      background-color: rgba(
+        red($secondary-color),
+        green($secondary-color),
+        blue($secondary-color),
+        0.5);
+      color: $font-default-color;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: 500;
+    }
+  }

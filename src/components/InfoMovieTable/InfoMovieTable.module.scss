@@ -35,12 +35,12 @@
     flex-direction: column;
     justify-content: center;
     font-weight: bold;
-    gap: 1rem; // espacio entre fila de info y tags
+    gap: 1rem;
 
   .info-row { 
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     display: flex;
-    gap: 1.5rem; // espacio entre cada elemento
+    gap: 1.5rem; 
   }
 
   .tags {
