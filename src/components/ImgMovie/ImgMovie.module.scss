@@ -1,0 +1,16 @@
+.img-movie {
+    position: fixed;
+
+    .poster{
+        width: 350px;
+        height: 500px;
+        background-color: $secondary-color;
+    }
+
+    .favs{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+}

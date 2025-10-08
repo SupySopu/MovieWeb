@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import InfoMovieTable from '../../../components/InfoMovieTable/InfoMovieTable'
 import CastTag from '../../../components/CastTag/CastTag'
-import MovieDescription from '../../../components/MovieDescription/MovieDescription'
+import ImgMovie from '../../../components/ImgMovie/ImgMovie'
 
 export const Route = createFileRoute('/movie/$movieId/')({
   component: RouteComponent,
@@ -12,7 +12,7 @@ export const Route = createFileRoute('/movie/$movieId/')({
 function RouteComponent() {
   const movie = {
     id: 1,
-    title: "Untitled: Ultimate Random Movie",
+    title: "Untitled: Ultimate Movie",
     originalTitle: "Real Name of Random Movie",
     score: 7.8,
     rank: "#1234",
@@ -25,33 +25,46 @@ function RouteComponent() {
     ],
     cast: [
       "Example Tag", 
+      "Example Loooooooooooooong Tag",
+      "Example Tag", 
+      "Example Loooooooooooooong Tag",
+      "Example Tag", 
+      "Example Loooooooooooooong Tag",
+      "Example Tag", 
+      "Example Loooooooooooooong Tag",
+      "Example Tag", 
       "Example Loooooooooooooong Tag"
     ]
   }
 
   return (
     <div className="movie-id-index">
-      <div className="img-movie"></div>
-      <div className="info-movie">
-        <h1>{movie.title}</h1>
-        <h2>{movie.originalTitle}</h2>
-
-        <InfoMovieTable
-          id={movie.id}
-          score={movie.score}
-          rank={movie.rank}
-          popularity={movie.popularity}
-          year={movie.year}
-          tags={movie.tags}
-        />
+      <div className='movie-id-index-left'>
+        <ImgMovie />
       </div>
 
-      <MovieDescription description={movie.description} />
+      <div className='movie-id-index-right'>
+        <div className="info-movie">
+          <h1>{movie.title}</h1>
+          <h2>{movie.originalTitle}</h2>
 
-      <div>
-        <h3>Cast</h3>
-        <hr />
-        <CastTag cast={movie.cast} />
+          <InfoMovieTable
+            id={movie.id}
+            score={movie.score}
+            rank={movie.rank}
+            popularity={movie.popularity}
+            year={movie.year}
+            tags={movie.tags}
+          />
+        </div>
+
+        <p>{movie.description}</p>
+
+        <div className="cast-div">
+          <h3>Cast</h3>
+          <hr />
+          <CastTag cast={movie.cast} />
+        </div>
       </div>
     </div>
   )
