@@ -150,7 +150,6 @@ export default function AddMovieForm() {
                 </div>
             </Field>
 
-
             <Field className='label-input-container'>
                 <div className="input-search-container">
                 <Label htmlFor='cast'>Cast</Label>

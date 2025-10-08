@@ -7,9 +7,14 @@
   color: $highlight-color;
 }
 
-.icon-heart {
+.icon-heart-unactive {
   @extend %icon-style;
   color: $font-default-color;
+}
+
+.icon-heart-active {
+  @extend %icon-style;
+  color: $highlight-color;
 }
 
 %btn-searchbar{

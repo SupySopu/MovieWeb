@@ -1,6 +1,6 @@
-import type { castProp } from "../../types/CastProp"
+import type { CastTagProps } from "../../types/Movie"
 
-export default function CastTag({cast}: castProp) {
+export default function CastTag({cast}: CastTagProps) {
   return (
     <div className="cast-tags">
             {cast.map((castTag: string, i: number) => (

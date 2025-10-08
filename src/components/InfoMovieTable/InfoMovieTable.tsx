@@ -1,6 +1,6 @@
-import type { infoMovieTableProps } from "../../types/InfoMovieTable"
+import type { InfoMovieTableProps } from "../../types/Movie"
 
-export default function InfoMovieTable({ score, rank, popularity, year, tags }: infoMovieTableProps) {
+export default function InfoMovieTable({ score, rank, popularity, year, tags }: InfoMovieTableProps) {
   return (
     <div className="info-movie-table">
       <div className="top-section">
