@@ -4,7 +4,7 @@ import { IoHeartOutline } from "react-icons/io5";
 import { IoIosHeart } from "react-icons/io";
 import type { FavouriteMovie } from "../../types/Movie";
 
-export default function HeartFavorites({isFav}: FavouriteMovie) {
+export default function HeartFavorites() {
   const [fav, setFav] = useState(false);
 
   function heartBtnState() {
