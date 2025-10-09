@@ -12,9 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as FavoritesRouteImport } from './routes/favorites'
 import { Route as AddMovieRouteImport } from './routes/addMovie'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as MovieIndexRouteImport } from './routes/movie/index'
+import { Route as MovieEditRouteImport } from './routes/movie/edit'
 import { Route as MovieMovieIdIndexRouteImport } from './routes/movie/$movieId/index'
-import { Route as MovieMovieIdEditRouteImport } from './routes/movie/$movieId/edit'
 
 const FavoritesRoute = FavoritesRouteImport.update({
   id: '/favorites',
@@ -31,9 +30,9 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MovieIndexRoute = MovieIndexRouteImport.update({
-  id: '/movie/',
-  path: '/movie/',
+const MovieEditRoute = MovieEditRouteImport.update({
+  id: '/movie/edit',
+  path: '/movie/edit',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MovieMovieIdIndexRoute = MovieMovieIdIndexRouteImport.update({
@@ -41,26 +40,19 @@ const MovieMovieIdIndexRoute = MovieMovieIdIndexRouteImport.update({
   path: '/movie/$movieId/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MovieMovieIdEditRoute = MovieMovieIdEditRouteImport.update({
-  id: '/movie/$movieId/edit',
-  path: '/movie/$movieId/edit',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/addMovie': typeof AddMovieRoute
   '/favorites': typeof FavoritesRoute
-  '/movie': typeof MovieIndexRoute
-  '/movie/$movieId/edit': typeof MovieMovieIdEditRoute
+  '/movie/edit': typeof MovieEditRoute
   '/movie/$movieId': typeof MovieMovieIdIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/addMovie': typeof AddMovieRoute
   '/favorites': typeof FavoritesRoute
-  '/movie': typeof MovieIndexRoute
-  '/movie/$movieId/edit': typeof MovieMovieIdEditRoute
+  '/movie/edit': typeof MovieEditRoute
   '/movie/$movieId': typeof MovieMovieIdIndexRoute
 }
 export interface FileRoutesById {
@@ -68,8 +60,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/addMovie': typeof AddMovieRoute
   '/favorites': typeof FavoritesRoute
-  '/movie/': typeof MovieIndexRoute
-  '/movie/$movieId/edit': typeof MovieMovieIdEditRoute
+  '/movie/edit': typeof MovieEditRoute
   '/movie/$movieId/': typeof MovieMovieIdIndexRoute
 }
 export interface FileRouteTypes {
@@ -78,24 +69,16 @@ export interface FileRouteTypes {
     | '/'
     | '/addMovie'
     | '/favorites'
-    | '/movie'
-    | '/movie/$movieId/edit'
+    | '/movie/edit'
     | '/movie/$movieId'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/addMovie'
-    | '/favorites'
-    | '/movie'
-    | '/movie/$movieId/edit'
-    | '/movie/$movieId'
+  to: '/' | '/addMovie' | '/favorites' | '/movie/edit' | '/movie/$movieId'
   id:
     | '__root__'
     | '/'
     | '/addMovie'
     | '/favorites'
-    | '/movie/'
-    | '/movie/$movieId/edit'
+    | '/movie/edit'
     | '/movie/$movieId/'
   fileRoutesById: FileRoutesById
 }
@@ -103,8 +86,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AddMovieRoute: typeof AddMovieRoute
   FavoritesRoute: typeof FavoritesRoute
-  MovieIndexRoute: typeof MovieIndexRoute
-  MovieMovieIdEditRoute: typeof MovieMovieIdEditRoute
+  MovieEditRoute: typeof MovieEditRoute
   MovieMovieIdIndexRoute: typeof MovieMovieIdIndexRoute
 }
 
@@ -131,11 +113,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/movie/': {
-      id: '/movie/'
-      path: '/movie'
-      fullPath: '/movie'
-      preLoaderRoute: typeof MovieIndexRouteImport
+    '/movie/edit': {
+      id: '/movie/edit'
+      path: '/movie/edit'
+      fullPath: '/movie/edit'
+      preLoaderRoute: typeof MovieEditRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/movie/$movieId/': {
@@ -145,13 +127,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MovieMovieIdIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/movie/$movieId/edit': {
-      id: '/movie/$movieId/edit'
-      path: '/movie/$movieId/edit'
-      fullPath: '/movie/$movieId/edit'
-      preLoaderRoute: typeof MovieMovieIdEditRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -159,8 +134,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AddMovieRoute: AddMovieRoute,
   FavoritesRoute: FavoritesRoute,
-  MovieIndexRoute: MovieIndexRoute,
-  MovieMovieIdEditRoute: MovieMovieIdEditRoute,
+  MovieEditRoute: MovieEditRoute,
   MovieMovieIdIndexRoute: MovieMovieIdIndexRoute,
 }
 export const routeTree = rootRouteImport

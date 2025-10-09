@@ -10,3 +10,15 @@
 h1 {
     font-size: 4rem;
 }
+
+body {
+  overflow-y: auto; // que aparezca solo cuando sea necesario
+}
+
+.root-layout {
+  .main-content {
+    padding-top: 60px;  // altura del navbar
+    min-height: 100vh;  // ocupa toda la pantalla
+    overflow-y: auto;   // scroll solo si es necesario
+  }
+}

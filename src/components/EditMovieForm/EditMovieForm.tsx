@@ -2,20 +2,20 @@ import { Input, Label, Field, Button, Textarea } from '@headlessui/react';
 import { useFormik } from 'formik';
 import { useState } from 'react';
 
-export default function AddMovieForm() {
+export default function EditMovieForm() {
     const [tagInput, setTagInput] = useState('');
     const [castInput, setCastInput] = useState('');
 
     const formik = useFormik({
         initialValues: {
-            title: '',
-            originalTitle: '',
-            lang: '',
-            author: '',
-            releaseDate: '',
-            tags: [] as string[],
-            synopsis: '',
-            cast: [] as string[]
+            title: 'Random Movie',
+            originalTitle: 'Random Movie OG Title',
+            lang: 'Es',
+            author: 'Random Author',
+            releaseDate: '24-05-1999',
+            tags: ["tag", "looooong tag", "tag tag"] as string[],
+            synopsis: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et arcu magna. Aenean non metus fermentum, volutpat mi sed, posuere eros. Pellentesque luctus facilisis lectus sit amet imperdiet. ',
+            cast: ["actor1", "actor2", "actor3"] as string[]
         },
         onSubmit: (values) => {
             alert(JSON.stringify(values, null, 2));
@@ -132,6 +132,7 @@ export default function AddMovieForm() {
                     type="text"
                     value={tagInput}
                     onChange={(e) => setTagInput(e.target.value)}
+                    placeholder='Input the tags...'
                 />
                 <Button type="button" className='tag-btn' onClick={addTag}>X</Button>
                 </div>
@@ -160,6 +161,7 @@ export default function AddMovieForm() {
                     type="text"
                     value={castInput}
                     onChange={(e) => setCastInput(e.target.value)}
+                    placeholder='Input the cast...'
                 />
                 <Button type="button" className='cast-btn' onClick={addCast}>X</Button>
                 </div>

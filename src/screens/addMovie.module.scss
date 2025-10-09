@@ -1,5 +1,16 @@
 .add-movie{
-    background: $base-color;
-    width: 100%;
+    background: $base-lighter-color;
     height: 100%;
+    display: flex;
+    gap: 50px;
+
+    .add-movie-right{  
+        margin-left: 40%;
+    }
+
+    .add-movie-left{
+        margin-top: 100px;
+        position: fixed;
+        margin-left: 15%;
+    }
 }

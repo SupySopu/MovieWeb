@@ -3,9 +3,14 @@ import AddMovieBtn from '../AddMovieBtn/AddMovieBtn'
 import { FaHome } from "react-icons/fa";
 import { IoHeartSharp } from "react-icons/io5";
 
-export default function NavBar() {
+interface NavBarProps {
+  backgroundColor?: string
+  isFloating?: boolean
+}
+
+export default function NavBar({ backgroundColor, isFloating }: NavBarProps) {
   return (
-    <div className="navbar">
+    <div className={`navbar ${isFloating ? 'floating' : ''}`} style={{backgroundColor}}>
 
       <div className="navbar-left">
       </div>
