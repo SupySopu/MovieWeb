@@ -4,8 +4,6 @@
 
 // componentes
 @import "./components/CastTag/CastTag.module.scss";
-@import "./components/ConfigCardBtn/ConfigCard.module.scss";
-@import "./components/FilterBtn/FilterBtn.module.scss";
 @import "./components/HeartFavorites/HeartFavorites.module.scss";
 @import "./components/HomeAddBtn/HomeAddBtn.module.scss";
 @import "./components/MovieCard/MovieCard.module.scss";
@@ -20,8 +18,13 @@
 @import "./components/ImgMovie/ImgMovie.module.scss";
 @import "./components/AddMovieImg/AddMovieImg.module.scss";
 @import "./components/EditMovieForm/EditMovieForm.module.scss";
-@import "./components/ConfigCardBtn/ConfigCard.module.scss";
-
+@import "./components/ConfMovieCard/ConfMovieCard.module.scss";
+@import "./components/AddMovieForm/AddMovieForm.module.scss";
+@import "./components/FilterAlphabet/FilterAlphabet.module.scss";
+@import "./components/FilterGenre/FilterGenre.module.scss";
+@import "./components/FilterRating/FilterRating.module.scss";
+@import "./components/FilterMenu/FilterMenu.module.scss";
+@import "./components/FilterType/FilterType.module.scss";
 
 @import "./screens/index.module.scss";
 @import "./screens/addMovie.module.scss";

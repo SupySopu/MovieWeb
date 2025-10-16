@@ -1,4 +1,4 @@
-import Example from '../FilterBtn/FilterBtn'
+import Example from '../FilterMenu/FilterMenu'
 import { Button } from '@headlessui/react'
 
 export default function Searchbar() {

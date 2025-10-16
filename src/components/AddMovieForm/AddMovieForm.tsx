@@ -168,6 +168,7 @@ export default function AddMovieForm() {
                 <div className="cast-container">
                     {formik.values.cast.map((cast, id) => (
                         <Button 
+                            id="cast-item"
                             type="button" 
                             key={id} 
                             className="cast-item"

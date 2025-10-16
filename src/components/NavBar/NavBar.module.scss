@@ -5,16 +5,16 @@
     top:0;
     left:0;
     z-index: 999;
-    width: 99%;
+    width: 97.7vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     &.floating {
-        position: absolute;      // 🔹 flota sobre el div de la primera vista
+        position: absolute; 
         top: 0;
         left: 0;
-        z-index: 999;            // encima de todo
+        z-index: 999;         
         background-color: transparent;
     }
 

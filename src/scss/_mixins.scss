@@ -34,3 +34,28 @@
   @extend %btn-searchbar;
   border-radius: 0 50px 50px 0;
 }
+
+%btn-conf-movie-card{
+  background: $base-lighter-color;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  width: 90%;
+  font-size: 1.2rem;
+
+  &:hover {
+    background-color: rgba($base-lighter-color, 1);
+  }
+}
+
+.edit-btn{
+  @extend %btn-conf-movie-card;
+  color: $highlight-color;
+}
+
+.delete-btn{
+  @extend %btn-conf-movie-card;
+  color: rgb(223, 0, 0);
+}
