@@ -1,9 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
-import AddMovieForm from '../components/AddMovieForm/AddMovieForm'
-import AddMovieImg from '../components/AddMovieImg/AddMovieImg'
+import EditMovieForm from '../../components/EditMovieForm/EditMovieForm'
+import AddMovieImg from '../../components/AddMovieImg/AddMovieImg'
 
-export const Route = createFileRoute('/addMovie')({
-  component: RouteComponent,
+export const Route = createFileRoute('/movie/edit')({  component: RouteComponent,
 })
 
 function RouteComponent() {
@@ -13,7 +12,7 @@ function RouteComponent() {
       <AddMovieImg/>
     </div>
     <div className='add-movie-right'>
-      <AddMovieForm/>
+      <EditMovieForm/>
     </div>
   </div>
   )

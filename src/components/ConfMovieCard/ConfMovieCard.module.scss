@@ -1,0 +1,49 @@
+.conf-movie-card {
+  background-color: $base-lighter-color;
+
+  .menu-btn {
+    background: none;
+    border: none;
+    color: $font-default-color;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    min-width: 140px;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1rem;
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+
+    .edit-btn {
+      color: $highlight-color;
+      background: none;
+    }
+
+    .delete-btn {
+      color: #ff4d4d;
+    }
+
+    .icon {
+      font-size: 1.2rem;
+    }
+  }
+}
