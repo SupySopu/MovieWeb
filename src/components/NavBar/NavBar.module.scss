@@ -10,14 +10,6 @@
     justify-content: space-between;
     align-items: center;
 
-    &.floating {
-        position: absolute; 
-        top: 0;
-        left: 0;
-        z-index: 999;         
-        background-color: transparent;
-    }
-
     a {
         display: flex;
         align-items: center;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .movie-card{
     position: relative;
     margin: 2%;
@@ -44,4 +45,52 @@
         }
     }
 
+=======
+.movie-card{
+    position: relative;
+    margin: 2%;
+    margin-bottom: 0%;
+
+    .redirect-card{
+        background-color: $base-color;
+        border: none;
+
+        .improv-img{
+            background-color: $secondary-color;
+            height: 200px;
+            width: 250px;
+            border-radius: 16px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 0px;
+            margin-top: 12px;
+            color: $font-default-color;
+            display: flex;
+            justify-content: flex-start;
+        }
+    }
+
+    .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+
+        .info-left {
+            display: flex;
+            align-items: center;
+            gap: 10px; 
+            font-size: 1.5rem;
+            color: $secondary-color;
+        }
+
+        .info-right {
+            margin: 0;
+            align-items: center;
+        }
+    }
+
+>>>>>>> 4f3638e89b5f2d339738455c0154ff47bb4754bf
 }

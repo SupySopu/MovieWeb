@@ -2,7 +2,7 @@
     padding: 100px;
     display: flex;
     flex-direction: column;
-    width: 80vh;
+    width: 45%;
 
     label {
         color: $font-default-color;
@@ -18,10 +18,6 @@
         font-size: 1.3rem;
         color: $font-default-color;
         margin-bottom: 16px;
-    }
-
-    textarea{
-          resize: vertical;
     }
 
     .og-title-lang-container{
