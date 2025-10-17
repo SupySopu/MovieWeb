@@ -59,3 +59,47 @@
   @extend %btn-conf-movie-card;
   color: rgb(223, 0, 0);
 }
+
+%search-items-input{
+    width: 100%;
+    padding: 8px;
+    background-color: $base-lighter-color;
+    font-size: 1rem;
+    color: $font-default-color;
+    border: none;
+    appearance: none;
+    cursor: pointer;
+    
+    background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 0.4rem center;
+    background-size: 1rem;
+}
+
+.filter-type {
+  position: relative;
+  width: 100px;
+
+  .filter-type-input{
+    @extend %search-items-input;
+    border-radius: 0 10px 10px 0;
+  }
+}
+
+.filter-alphabet {
+  position: relative;
+  width: 60px;
+
+  .filter-alphabet-input {
+    @extend %search-items-input;
+  }
+}
+
+.filter-rating {
+  position: relative;
+  width: 100px;
+
+  .filter-rating-input {
+    @extend %search-items-input;
+  }
+}

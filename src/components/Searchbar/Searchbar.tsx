@@ -1,12 +1,17 @@
-import Example from '../FilterMenu/FilterMenu'
-import { Button } from '@headlessui/react'
+import FilterAlphabet from '../FilterAlphabet/FilterAlphabet'
+import FilterGenre from '../FilterGenre/FilterGenre'
+import {Input } from '@headlessui/react'
+import FilterRating from '../FilterRating/FilterRating'
+import FilterType from '../FilterType/FilterType'
 
 export default function Searchbar() {
   return (
     <div className="search-bar">
-        <Example/>
-        <input placeholder='Enter a movie...'></input>
-        <Button className="enter-btn">Enter</Button>
+        <Input className="input-search-bar" name="search" type="text" placeholder='Enter a movie...'></Input>
+        <FilterGenre />
+        <FilterAlphabet/>
+        <FilterRating />
+        <FilterType />
     </div>
   )
 }
