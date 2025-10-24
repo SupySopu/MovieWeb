@@ -1,20 +1,19 @@
 import { Button } from "@headlessui/react";
-import { useState } from "react";
 import { IoHeartOutline } from "react-icons/io5";
 import { IoIosHeart } from "react-icons/io";
+import type { FavouriteMovie } from "../../types/Movie";
 
-export default function HeartFavorites() {
-  const [fav, setFav] = useState(false);
+type HeartFavoritesProps = FavouriteMovie & {
+  manageFav: (updateFav: boolean) => void; 
+}
 
-  function heartBtnState() {
-    setFav(!fav);
-  }
-
+export default function HeartFavorites({ id, isFav, manageFav }: HeartFavoritesProps) {
   return (
-    <Button className="heart-btn" onClick={heartBtnState}>
-      {fav ? <IoIosHeart className="icon-heart-active" /> : (
-        <IoHeartOutline className="icon-heart-unactive"/>
-        )}
+    <Button className="heart-btn" onClick={() => manageFav(!isFav)}>
+      {isFav 
+        ? <IoIosHeart className="icon-heart-active" /> 
+        : <IoHeartOutline className="icon-heart-unactive"/>
+      }
     </Button>
   )
 }

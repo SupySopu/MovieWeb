@@ -5,6 +5,7 @@ import Searchbar from '../components/Searchbar/Searchbar'
 import computer from "../assets/computer.png"
 import NewReleasesCard from '../components/NewReleasesCard/NewReleasesCard'
 import Pagination from '../components/Pagination/Pagination'
+import { movieCardsData } from '../types/db'
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -30,14 +31,16 @@ function Index() {
       <div className="search">
         <Searchbar/>
         <div className="container-movies">
-          <Moviecard />
-          <Moviecard />
-          <Moviecard />
-          <Moviecard />
-          <Moviecard />
-          <Moviecard />
-          <Moviecard />
-          <Moviecard />
+          {movieCardsData.map((movie) => (
+            <Moviecard
+              key={movie.id}
+              id={movie.id}
+              title={movie.title}
+              score={movie.score}
+              isFav={movie.isFav}
+              isLocal={movie.isLocal}
+            />
+          ))}
         </div>
         <Pagination />
       </div>

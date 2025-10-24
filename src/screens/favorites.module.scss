@@ -1,0 +1,15 @@
+.favs{
+    margin: 0;
+    margin-top: 83px;
+    color: $font-default-color;
+    background-color: $base-color;
+    min-height: 100%;
+    
+    .container-movies {
+        display: flex;
+        flex-wrap: wrap;          
+        gap: 10px;
+        row-gap: 0;              
+        justify-content: center; 
+    }
+}

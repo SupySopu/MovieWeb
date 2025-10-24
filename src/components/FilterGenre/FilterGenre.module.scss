@@ -5,7 +5,7 @@
 
   input {
     width: 100%;
-    padding: 8px;
+    padding: 7px;
     background-color: $base-lighter-color;
     font-size: 1rem;
     appearance: none;
@@ -20,7 +20,6 @@
   width: 190px;
   background-color: $base-lighter-color;
   color: $font-default-color;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   z-index: 999;
   overflow: hidden;
 }

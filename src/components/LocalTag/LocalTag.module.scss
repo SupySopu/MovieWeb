@@ -1,0 +1,15 @@
+.local-tag {
+  position: absolute;
+  bottom: 10px;         // distancia desde la parte inferior de la imagen
+  left: 50%;             
+  transform: translateX(-50%); // centrar horizontalmente
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: $highlight-color;
+  color: $base-color;
+  font-weight: bold;
+  font-size: 0.9rem;
+  z-index: 10;           // por encima de la imagen
+  text-align: center;
+  white-space: nowrap;
+}

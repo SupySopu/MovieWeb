@@ -63,6 +63,7 @@
     padding-top: 30px;
     color: $font-default-color;
     background-color: $base-color;
+    height: 99;
 
     .container-movies {
         display: flex;
@@ -74,15 +75,6 @@
 }
 
 .new-releases{
-    /*background: radial-gradient(
-    ellipse at center,
-    #502786 7%,
-    #48145D 53%,
-    #0A0048 100%
-    );
-    background-size: 150% 100%;
-    background-repeat: no-repeat;*/
-
     background:
     linear-gradient(to bottom right,#974ac4 7%, #4E098F 53%, #300f4e 100%) bottom right,
     linear-gradient(to bottom left, #974ac4 7%, #4E098F 53%, #300f4e 100%) bottom left,
@@ -91,8 +83,6 @@
 
     background-size:51% 51%;
     background-repeat:no-repeat;
-
-
     
     padding: 60px;
 

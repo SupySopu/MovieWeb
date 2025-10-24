@@ -8,16 +8,16 @@ export const RootLayout = () => {
 
   switch (location.pathname) {
     case '/':
-      navbarColor = '#090042'
+      navbarColor = 'transparent'
       break
     case '/favorites':
-      navbarColor = '#090042'
+      navbarColor = '#06002D'
       break
     case '/addMovie':
-      navbarColor = '#090042'
+      navbarColor = '#06002D'
       break
     default:
-      navbarColor = '#090042'
+      navbarColor = '#06002D'
       break
   }
 

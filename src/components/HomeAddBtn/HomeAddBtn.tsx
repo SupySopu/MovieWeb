@@ -1,9 +1,10 @@
 import { Button } from "@headlessui/react";
+import { Link } from "@tanstack/react-router";
 
 export default function HomeAddBtn() {
   return (
     <>
-      <Button className="home-add-btn">Add your movies</Button>
+      <Link as='button' className="home-add-btn">Add your movies</Link>
     </>
   )
 }

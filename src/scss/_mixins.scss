@@ -86,16 +86,7 @@
   }
 }
 
-.filter-alphabet {
-  position: relative;
-  width: 60px;
-
-  .filter-alphabet-input {
-    @extend %search-items-input;
-  }
-}
-
-.filter-rating {
+.order {
   position: relative;
   width: 100px;
 

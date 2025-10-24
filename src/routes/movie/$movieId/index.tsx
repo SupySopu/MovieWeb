@@ -7,8 +7,6 @@ export const Route = createFileRoute('/movie/$movieId/')({
   component: RouteComponent,
 })
 
-// 
-
 function RouteComponent() {
   const movie = {
     id: 1,
