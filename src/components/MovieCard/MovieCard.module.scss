@@ -4,14 +4,18 @@
     margin-bottom: 0%;
 
     .redirect-card{
-        background-color: $base-color;
+        background-color: transparent;
         border: none;
+        width: 250px;
+        text-align: left;
 
         img{
             height: 180px;
-            width: 250px;
+            width: 100%;
             object-fit: cover;
             border-radius: 16px;
+            display: block;
+            
         }
 
         h3 {
@@ -19,8 +23,12 @@
             margin: 0px;
             margin-top: 12px;
             color: $font-default-color;
-            display: flex;
-            justify-content: flex-start;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            
+            width: 100%;
         }
     }
 

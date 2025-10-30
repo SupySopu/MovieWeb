@@ -1,6 +1,6 @@
 import type { InfoMovieTableProps } from "../../types/Movie"
 
-export default function InfoMovieTable({ score, rank, popularity, year, tags }: InfoMovieTableProps) {
+export default function InfoMovieTable({ popularity, release_date, vote_average, vote_count }: InfoMovieTableProps) {
   return (
     <div className="info-movie-table">
       <div className="top-section">
@@ -8,21 +8,21 @@ export default function InfoMovieTable({ score, rank, popularity, year, tags }: 
           <span className="score-label">
             Score
           </span>
-          <span className="score-value">{score}</span>
+          <span className="score-value">{vote_average}</span>
         </div>
 
         <div className="info-right">
           <div className="info-row">
-            <span>Ranked: {rank}</span>
+            <span>Ranked: {vote_count}</span>
             <span>Popularity: {popularity}</span>
-            <span>{year}</span>
+            <span>{release_date}</span>
           </div>
 
-          <div className="tags">
-            {tags.map((tag: string, i: number) => (
-              <span key={i} className="tag">{tag}</span>
+          {/* <div className="tags">
+            {genres.map((genres: string[], i: number) => (
+              <span key={i} className="tag">{genres}</span>
             ))}
-          </div>
+          </div> */}
         </div>
 
       </div>

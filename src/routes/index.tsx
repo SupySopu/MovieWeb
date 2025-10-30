@@ -5,13 +5,17 @@ import Searchbar from '../components/Searchbar/Searchbar'
 import computer from "../assets/computer.png"
 import NewReleasesCard from '../components/NewReleasesCard/NewReleasesCard'
 import Pagination from '../components/Pagination/Pagination'
-import { movieCardsData } from '../types/db'
+import { useFetchMovies } from '../hooks/useFetchMovies'
+import { useMoviesStore } from '../stores/movieStore'
 
 export const Route = createFileRoute('/')({
   component: Index,
 })
 
 function Index() {
+  const {movies} = useMoviesStore()
+  const {isLoading} = useFetchMovies()
+
   return (
     <div className="home">
       <div className="start">
@@ -27,23 +31,6 @@ function Index() {
         </div>
         
       </div>
-      
-      <div className="search">
-        <Searchbar/>
-        <div className="container-movies">
-          {movieCardsData.map((movie) => (
-            <Moviecard
-              key={movie.id}
-              id={movie.id}
-              title={movie.title}
-              score={movie.score}
-              isFav={movie.isFav}
-              isLocal={movie.isLocal}
-            />
-          ))}
-        </div>
-        <Pagination />
-      </div>
 
       <div className='new-releases'>
         <h1>New Releases</h1>
@@ -52,6 +39,26 @@ function Index() {
           <NewReleasesCard />
           <NewReleasesCard />
         </div>
+      </div>
+      
+      <div className="search">
+        <h1>Search for any movie</h1>
+        <Searchbar/>
+        <div className="container-movies">
+          {movies.length > 0 ? (
+            movies.map((movies) => (
+            <Moviecard
+              key={movies.id}
+              id={movies.id}
+              title={movies.title}
+              vote_average={movies.vote_average}
+              poster_path={movies.backdrop_path}
+            />
+          ))) : (
+            <h3>0 movies found</h3>
+          )}
+        </div>
+        <Pagination />
       </div>
     </div>
   )

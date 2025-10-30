@@ -65,6 +65,13 @@
     background-color: $base-color;
     height: 99;
 
+    h1 {
+        color: $highlight-color;
+        margin: 0 0 20px 0;
+        width: 100%;
+        text-align: center;
+    }
+
     .container-movies {
         display: flex;
         flex-wrap: wrap;          
