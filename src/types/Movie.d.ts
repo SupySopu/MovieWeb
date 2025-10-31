@@ -36,7 +36,6 @@ export type Genres = {
 }
 
 export type MovieDetails = {
-  backdrop_path: string,
   genres: Genres[],
   id: number,
   original_language: string,
@@ -55,7 +54,9 @@ export type MovieCardProps = Pick<MovieApi, 'id' | 'title' | 'vote_average' | 'p
 
 // export type MovieCardProps = Pick<Movie, 'id' | 'title' | 'score' | 'isFav' | 'isLocal'>;
 
-export type InfoMovieTableProps = Pick<MovieDetails, 'vote_average' | 'vote_count' |'popularity' | 'release_date'>;
+export type InfoMovieTableProps = Pick<MovieDetails, 'vote_average' | 'vote_count' |'popularity' | 'release_date' | "genres" >
+
+export type ImgMovieProp = Pick<MovieDetails, "poster_path"> 
 
 export type CastTagProps = Pick<Movie, 'cast'>;
 

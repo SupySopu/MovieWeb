@@ -1,10 +1,8 @@
 import { useQuery } from "@tanstack/react-query"
 import { Apiservice } from "../service/api/Apiservice"
-import { useMoviesStore, useMovieStore } from "../stores/movieStore"
+import { useMoviesStore  } from "../stores/movieStore"
 import { useEffect } from "react";
-import type { MovieApi, MovieDetails } from "../types/Movie";
-
-// mapper que obtenga lo que necesito para movieDetails
+import type { MovieApi } from "../types/Movie";
 
 export interface MoviesResponse {
     page: number,
@@ -30,19 +28,3 @@ export const useFetchMovies = () => {
 
     return query;
 }
-
-export const useFetchMovie = (movieId: number) => {
-  const { set } = useMovieStore();
-
-  const query = useQuery<MovieDetails>({
-    queryKey: ["movie", movieId],
-    queryFn: () => Apiservice.getMovie(movieId),
-    });
-
-    useEffect(() => {
-        if (query.data) {
-            set(query.data);
-        }
-    }, [query.data])
-    return query;
-};

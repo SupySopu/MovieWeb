@@ -2,7 +2,7 @@ import { createFileRoute, useParams } from '@tanstack/react-router'
 import InfoMovieTable from '../../../components/InfoMovieTable/InfoMovieTable'
 import CastTag from '../../../components/CastTag/CastTag'
 import ImgMovie from '../../../components/ImgMovie/ImgMovie'
-import { useFetchMovie } from '../../../hooks/useFetchMovies';
+import { useFetchMovieById } from '../../../hooks/useFetchMovieById';
 
 export const Route = createFileRoute('/movie/$movieId/')({
   component: RouteComponent,
@@ -10,7 +10,7 @@ export const Route = createFileRoute('/movie/$movieId/')({
 
 function RouteComponent() {
   const { movieId } = useParams({ from: "/movie/$movieId/" });
-  const { data: movie, isLoading, error } = useFetchMovie(Number(movieId));
+  const { data: movie, isLoading, error } = useFetchMovieById(Number(movieId));
 
   if (isLoading) return <p>Loading...</p>;
   if (error || !movie) return <p>Error al cargar la película</p>;
@@ -18,7 +18,9 @@ function RouteComponent() {
   return (
     <div className="movie-id-index">
       <div className='movie-id-index-left'>
-        <ImgMovie />
+        <ImgMovie 
+        poster_path={movie.poster_path}
+        />
       </div>
 
       <div className='movie-id-index-right'>
@@ -31,7 +33,7 @@ function RouteComponent() {
             vote_count={movie.vote_count}
             popularity={movie.popularity}
             release_date={movie.release_date}
-            // tags={genres}
+            genres={movie.genres}
           />
         </div>
 

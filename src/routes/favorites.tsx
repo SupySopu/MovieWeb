@@ -17,8 +17,8 @@ function RouteComponent() {
               id={movie.id}
               title={movie.title}
               score={movie.score}
-              isFav={movie.isFav}
-              isLocal={movie.isLocal}
+              // isFav={movie.isFav}
+              // isLocal={movie.isLocal}
             />
         ))}
         <Pagination />
