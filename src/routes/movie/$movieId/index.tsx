@@ -1,8 +1,10 @@
 import { createFileRoute, useParams } from '@tanstack/react-router'
 import InfoMovieTable from '../../../components/InfoMovieTable/InfoMovieTable'
-import CastTag from '../../../components/CastTag/CastTag'
 import ImgMovie from '../../../components/ImgMovie/ImgMovie'
 import { useFetchMovieById } from '../../../hooks/useFetchMovieById';
+import CastList from '../../../components/CastList/CastList';
+import { useCastStore } from '../../../stores/castStore';
+import { useFetchCast } from '../../../hooks/useFetchCastByMovie';
 
 export const Route = createFileRoute('/movie/$movieId/')({
   component: RouteComponent,
@@ -11,6 +13,8 @@ export const Route = createFileRoute('/movie/$movieId/')({
 function RouteComponent() {
   const { movieId } = useParams({ from: "/movie/$movieId/" });
   const { data: movie, isLoading, error } = useFetchMovieById(Number(movieId));
+  const { cast } = useCastStore();
+  useFetchCast();
 
   if (isLoading) return <p>Loading...</p>;
   if (error || !movie) return <p>Error al cargar la película</p>;
@@ -39,11 +43,11 @@ function RouteComponent() {
 
         <p>{movie.overview}</p>
 
-        {/* <div className="cast-div">
+        <div className="cast-div">
           <h3>Cast</h3>
           <hr />
-          <CastTag cast={genres} />
-        </div> */}
+          <CastList cast={cast} />
+        </div>
       </div>
     </div>
   )

@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useMovieStore } from "../stores/movieStore";
+import { useMovieStore } from "../stores/movieIdStore";
 import type { MovieDetails } from "../types/Movie";
 import { Apiservice } from "../service/api/Apiservice";
 import { useEffect } from "react";
@@ -17,5 +17,6 @@ export const useFetchMovieById = (movieId: number) => {
             set(query.data);
         }
     }, [query.data])
+
     return query;
 };

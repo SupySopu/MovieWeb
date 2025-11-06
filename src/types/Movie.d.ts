@@ -58,7 +58,7 @@ export type InfoMovieTableProps = Pick<MovieDetails, 'vote_average' | 'vote_coun
 
 export type ImgMovieProp = Pick<MovieDetails, "poster_path"> 
 
-export type CastTagProps = Pick<Movie, 'cast'>;
+// export type CastTagProps = Pick<Movie, 'cast'>;
 
 export type MovieDescriptionProps = Pick<Movie, 'description'>;
 

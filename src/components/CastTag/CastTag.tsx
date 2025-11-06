@@ -1,11 +1,9 @@
-import type { CastTagProps } from "../../types/Movie"
+import type { CastTagProps } from "../../types/Cast";
 
-export default function CastTag({cast}: CastTagProps) {
+export default function CastTag({ id, character, name }: CastTagProps) {
   return (
-    <div className="cast-tags">
-      {cast.map((castTag: string, i: number) => (
-        <span key={i} className="cast-tag">{castTag}</span>
-      ))}
-    </div>
-  )
+    <span key={id} className="cast-tag">
+      {name} — <small>{character}</small>
+    </span>
+  );
 }

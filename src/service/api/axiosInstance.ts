@@ -15,7 +15,7 @@ export const axiosInstance = axios.create({
 axiosInstance.interceptors.response.use(
     (response) => {
         console.log(`🚀 DummyJSON API Response: ${response.status} ${response.statusText}`);
-        return response.data;
+        return response;
     },
 );
 

@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query"
 import { Apiservice } from "../service/api/Apiservice"
-import { useMoviesStore  } from "../stores/movieStore"
 import { useEffect } from "react";
 import type { MovieApi } from "../types/Movie";
+import { useMoviesStore } from "../stores/moviesStore";
 
 export interface MoviesResponse {
     page: number,
@@ -25,6 +25,6 @@ export const useFetchMovies = () => {
             set({movies: query.data.results})
         }
     }, [query.data])
-
+        console.log(query.data)
     return query;
 }

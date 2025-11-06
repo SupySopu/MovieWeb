@@ -6,7 +6,7 @@ import computer from "../assets/computer.png"
 import NewReleasesCard from '../components/NewReleasesCard/NewReleasesCard'
 import Pagination from '../components/Pagination/Pagination'
 import { useFetchMovies } from '../hooks/useFetchMovies'
-import { useMoviesStore } from '../stores/movieStore'
+import { useMoviesStore } from '../stores/moviesStore'
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -45,7 +45,7 @@ function Index() {
         <h1>Search for any movie</h1>
         <Searchbar/>
         <div className="container-movies">
-          {movies.length > 0 ? (
+          {movies?.length > 0 ? (
             movies.map((movies) => (
             <Moviecard
               key={movies.id}
