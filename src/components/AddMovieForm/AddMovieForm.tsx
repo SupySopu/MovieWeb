@@ -1,6 +1,7 @@
 import { Input, Label, Field, Button, Textarea } from '@headlessui/react';
 import { useFormik } from 'formik';
 import { useState } from 'react';
+import styles from "./AddMovieForm.module.scss";
 
 export default function AddMovieForm() {
     const [tagInput, setTagInput] = useState('');
@@ -51,7 +52,7 @@ export default function AddMovieForm() {
     };
 
     return (
-        <form className='form-add-movie'>
+        <form className={styles["form-add-movie"]}>
             <Field className='label-input-container'>
                 <Label htmlFor='title'>Title</Label>
                 <Input

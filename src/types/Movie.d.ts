@@ -1,17 +1,17 @@
-export type Movie = {
-  id: number;
-  title: string;      
-  originalTitle: string; 
-  score: number;       
-  rank: string;        
-  popularity: string;  
-  year: string;        
-  tags: string[];      
-  description: string[]; 
-  cast: string[];
-  isFav: boolean;
-  isLocal: boolean;
-};
+// export type Movie = {
+//   id: number;
+//   title: string;      
+//   originalTitle: string; 
+//   score: number;       
+//   rank: string;        
+//   popularity: string;  
+//   year: string;        
+//   tags: string[];      
+//   description: string[]; 
+//   cast: string[];
+//   isFav: boolean;
+//   isLocal: boolean;
+// };
 
 export type MovieApi = {
   adult: boolean,
@@ -28,6 +28,12 @@ export type MovieApi = {
   video: boolean,
   vote_average: number,
   vote_count: number
+}
+
+export type MovieApiSearchParams = {
+  sort_by?: string,
+  with_genres?: string,
+  q?: string
 }
 
 export type Genres = {
@@ -50,16 +56,13 @@ export type MovieDetails = {
   vote_count: number
 }
 
-export type MovieCardProps = Pick<MovieApi, 'id' | 'title' | 'vote_average' | 'poster_path'>
 
-// export type MovieCardProps = Pick<Movie, 'id' | 'title' | 'score' | 'isFav' | 'isLocal'>;
+export type MovieCardProps = Pick<MovieApi, 'id' | 'title' | 'vote_average' | 'poster_path'>
 
 export type InfoMovieTableProps = Pick<MovieDetails, 'vote_average' | 'vote_count' |'popularity' | 'release_date' | "genres" >
 
 export type ImgMovieProp = Pick<MovieDetails, "poster_path"> 
 
-// export type CastTagProps = Pick<Movie, 'cast'>;
+// export type MovieCardProps = Pick<Movie, 'id' | 'title' | 'score' | 'isFav' | 'isLocal'>;
 
-export type MovieDescriptionProps = Pick<Movie, 'description'>;
-
-export type FavouriteMovie = Pick<Movie, 'id' | 'isFav'>
+// export type FavouriteMovie = Pick<Movie, 'id' | 'isFav'>

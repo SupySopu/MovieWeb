@@ -1,10 +1,11 @@
 import type { CastResponse } from "../../hooks/useFetchCastByMovie";
 import type { MoviesResponse } from "../../hooks/useFetchMovies";
-import type { MovieDetails } from "../../types/Movie";
+import type { MovieApiSearchParams, MovieDetails } from "../../types/Movie";
 import { axiosInstance } from "./axiosInstance";
 
-const getMovies = async ():Promise<MoviesResponse> => {
-    const response = await axiosInstance.get("/movie/popular");
+// asegurar que el filtro no sea undefined
+const getMovies = async (page = 1, params: MovieApiSearchParams ):Promise<MoviesResponse> => {
+    const response = await axiosInstance.get(`/discover/movie?page=${page}`, {params});
 
     return response.data;
 }

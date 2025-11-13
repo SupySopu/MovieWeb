@@ -11,13 +11,13 @@ export interface MoviesResponse {
     total_results: number
 }
 
-export const useFetchMovies = () => {
+export const useFetchMovies = (page: number) => {
 
-    const {set} = useMoviesStore();
+    const {set, params} = useMoviesStore();
 
     const query = useQuery<MoviesResponse>({
-        queryKey: ["movies"],
-        queryFn: () => Apiservice.getMovies()
+        queryKey: ["movies", page, params.q, params.sort_by],
+        queryFn: () => Apiservice.getMovies(page, params)
     })
 
     useEffect(() => { 
@@ -25,6 +25,6 @@ export const useFetchMovies = () => {
             set({movies: query.data.results})
         }
     }, [query.data])
-        console.log(query.data)
+    
     return query;
 }

@@ -103,3 +103,29 @@
         gap: 20px;
     }
 }
+
+.paginacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem;
+
+    .page-item {
+        display: inline-block;
+        border-radius: 6px;
+        cursor: pointer;
+        
+        &:hover {
+            background-color: $base-lighter-color;
+        }
+    }
+
+    .page-link {
+        display: block;
+        padding: 6px 12px;
+        color: $highlight-color;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+}

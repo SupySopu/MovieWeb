@@ -4,17 +4,23 @@ import Moviecard from '../components/MovieCard/Moviecard'
 import Searchbar from '../components/Searchbar/Searchbar'
 import computer from "../assets/computer.png"
 import NewReleasesCard from '../components/NewReleasesCard/NewReleasesCard'
-import Pagination from '../components/Pagination/Pagination'
 import { useFetchMovies } from '../hooks/useFetchMovies'
 import { useMoviesStore } from '../stores/moviesStore'
+import ReactPaginate from 'react-paginate'
+import { useState } from 'react'
 
 export const Route = createFileRoute('/')({
   component: Index,
 })
 
 function Index() {
-  const {movies} = useMoviesStore()
-  const {isLoading} = useFetchMovies()
+  const [page, setPage] = useState(1);
+  const { movies } = useMoviesStore();
+  const { data } = useFetchMovies(page);
+
+  const handlePageClick = (event: { selected: number }) => {
+    setPage(event.selected + 1);
+  };
 
   return (
     <div className="home">
@@ -58,7 +64,29 @@ function Index() {
             <h3>0 movies found</h3>
           )}
         </div>
-        <Pagination />
+        <div className='paginacion'>
+          <ReactPaginate
+            className='paginacion-items'
+            previousLabel="< Previous"
+            nextLabel="Next >"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={3}
+            marginPagesDisplayed={2}
+            pageCount={data?.total_pages ? 10 : 0}
+            pageClassName="page-item"
+            pageLinkClassName="page-link"
+            previousClassName="page-item"
+            previousLinkClassName="page-link"
+            nextClassName="page-item"
+            nextLinkClassName="page-link"
+            breakLabel="..."
+            breakClassName="page-item"
+            breakLinkClassName="page-link"
+            containerClassName="pagination"
+            activeClassName="active"
+            renderOnZeroPageCount={null}
+          />
+        </div>
       </div>
     </div>
   )

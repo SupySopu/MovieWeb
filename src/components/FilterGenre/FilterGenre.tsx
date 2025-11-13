@@ -1,36 +1,37 @@
 import { Combobox, ComboboxInput, ComboboxOption, ComboboxOptions } from '@headlessui/react'
-import { useState } from 'react'
+import { useState } from 'react';
+import type { Genres } from "../../types/Movie";
 
-const genre = [
-  { id: 1, label: 'Fiction' },
-  { id: 2, label: 'Documentary' },
-  { id: 3, label: 'Romance' },
-  { id: 4, label: 'Comedy' },
-]
+// Hacer fetch a la api con los generos
+// Dejarlo como componente
 
-export default function FilterGenre() {
-  const [selectedGenre, setSelectedGenre] = useState(genre[0])
+interface GenresListProps {
+  genresList: Genres[]
+}
+
+export default function FilterGenre({genresList}: GenresListProps) {
+  const [genre, setGenre] = useState(genresList)
   const [query, setQuery] = useState('')
 
   const filteredGenre =
     query === ''
       ? genre
       : genre.filter((genre) => {
-          return genre.label.toLowerCase().includes(query.toLowerCase())
+          return genre.name.toLowerCase().includes(query.toLowerCase())
         })
 
   return (
       <Combobox as="div" value={selectedGenre} className="filter-genre" onChange={() => setSelectedGenre()} onClose={() => setQuery('')}>
         <ComboboxInput
           aria-label="Genres"
-          displayValue={(genre) => genre?.label ?? ""}
+          displayValue={(genre) => genre?.name ?? ""}
           placeholder="Genre"
           onChange={(event) => setQuery(event.target.value)}
         />
         <ComboboxOptions anchor="bottom" className="filter-genre-options">
           {filteredGenre.map((genre) => (
             <ComboboxOption key={genre.id} value={genre} className="filter-genre-option">
-              {genre.label}
+              {genre.name}
             </ComboboxOption>
           ))}
         </ComboboxOptions>

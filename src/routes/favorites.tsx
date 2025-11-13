@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Moviecard from '../components/MovieCard/Moviecard'
-import Pagination from '../components/Pagination/Pagination'
 import { movieCardsData } from '../types/db'
 
 export const Route = createFileRoute('/favorites')({
@@ -21,7 +20,6 @@ function RouteComponent() {
               // isLocal={movie.isLocal}
             />
         ))}
-        <Pagination />
       </div>
     </div>
   )
