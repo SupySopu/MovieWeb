@@ -16,7 +16,7 @@ export const useFetchMovies = (page: number) => {
     const {set, params} = useMoviesStore();
 
     const query = useQuery<MoviesResponse>({
-        queryKey: ["movies", page, params.q, params.sort_by],
+        queryKey: ["movies", page, params.q, params.sort_by, params.with_genres],
         queryFn: () => Apiservice.getMovies(page, params)
     })
 

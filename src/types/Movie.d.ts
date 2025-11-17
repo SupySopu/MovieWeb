@@ -32,7 +32,7 @@ export type MovieApi = {
 
 export type MovieApiSearchParams = {
   sort_by?: string,
-  with_genres?: string,
+  with_genres?: number, // para que sea solo un genero es un string, sino Genres[] para muchos
   q?: string
 }
 
