@@ -15,12 +15,13 @@ const orderOptions = [
 ]
 
 export default function Searchbar() {
-  const { movies, params, set } = useMoviesStore()
+  const { params, set } = useMoviesStore()
   const data = useFetchGenre();
   const [ selectedOrder, setSelectedOrder] = useState(orderOptions[0])
 
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    set({ params: { ...params, q: event.target.value} });
+  
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    set({ params: { ...params, q: e.target.value } });
   };
 
   const handleSortChange = (option: { value: string; label: string }) => {

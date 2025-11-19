@@ -10,6 +10,10 @@ const getMovies = async (page = 1, params: MovieApiSearchParams ):Promise<Movies
     return response.data;
 }
 
+// const getSearchMovieList = async(){
+//     const response = await axiosInstance.get(`/search/movie`)
+// }
+
 const getMovieById = async (id: number): Promise<MovieDetails> => {
     const response = await axiosInstance.get<MovieDetails>(`/movie/${id}`);
 

@@ -2,10 +2,13 @@ import { Input, Label, Field, Button, Textarea } from '@headlessui/react';
 import { useFormik } from 'formik';
 import { useState } from 'react';
 import styles from "./AddMovieForm.module.scss";
+import { useCreateFilm } from '../../hooks/useCreateFilm';
 
 export default function AddMovieForm() {
     const [tagInput, setTagInput] = useState('');
     const [castInput, setCastInput] = useState('');
+
+    const mutation = useCreateFilm();
 
     const formik = useFormik({
         initialValues: {
@@ -19,7 +22,7 @@ export default function AddMovieForm() {
             cast: [] as string[]
         },
         onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2));
+            mutation.mutate({title: "fsfa", originalTitle:"dfisdjf", lang:"hu", author:"odafdf", releaseDate:"22112000", tags:["dsfaf", "afdsf", "fssaf"], synopsis:"asjdaifds", cast:["dmfadsf"]})
         }
     })
 
@@ -52,7 +55,7 @@ export default function AddMovieForm() {
     };
 
     return (
-        <form className={styles["form-add-movie"]}>
+        <form className={styles["form-add-movie"]} onSubmit={formik.handleSubmit}>
             <Field className='label-input-container'>
                 <Label htmlFor='title'>Title</Label>
                 <Input
@@ -180,6 +183,7 @@ export default function AddMovieForm() {
                     ))}
                 </div>
             </Field>
+
             <Button type="submit" className="submit-btn">Submit</Button>
         </form>
     )
