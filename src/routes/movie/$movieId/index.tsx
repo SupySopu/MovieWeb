@@ -1,10 +1,11 @@
-import { createFileRoute, useParams } from '@tanstack/react-router'
+import { createFileRoute, useParams } from '@tanstack/react-router' 
 import InfoMovieTable from '../../../components/InfoMovieTable/InfoMovieTable'
 import ImgMovie from '../../../components/ImgMovie/ImgMovie'
 import { useFetchMovieById } from '../../../hooks/useFetchMovieById';
 import CastList from '../../../components/CastList/CastList';
 import { useCastStore } from '../../../stores/castStore';
 import { useFetchCast } from '../../../hooks/useFetchCastByMovie';
+import styles from "../../../screens/movie/movieIdIndex.module.scss"
 
 export const Route = createFileRoute('/movie/$movieId/')({
   component: RouteComponent,
@@ -20,15 +21,15 @@ function RouteComponent() {
   if (error || !movie) return <p>Error al cargar la película</p>;
 
   return (
-    <div className="movie-id-index">
-      <div className='movie-id-index-left'>
-        <ImgMovie 
-        poster_path={movie.poster_path}
-        />
+    <div className={styles["movie-id-index"]}>
+      
+      <div className={styles["movie-id-index-left"]}>
+        <ImgMovie poster_path={movie.poster_path} />
       </div>
 
-      <div className='movie-id-index-right'>
-        <div className="info-movie">
+      <div className={styles["movie-id-index-right"]}>
+        
+        <div className={styles["info-movie"]}>
           <h1>{movie.title}</h1>
           <h2>{movie.original_title}</h2>
 
@@ -41,14 +42,15 @@ function RouteComponent() {
           />
         </div>
 
-        <p>{movie.overview}</p>
+        <p className={styles["movie-overview"]}>{movie.overview}</p>
 
-        <div className="cast-div">
+        <div className={styles["cast-div"]}>
           <h3>Cast</h3>
           <hr />
           <CastList cast={cast} />
         </div>
+
       </div>
     </div>
-  )
+  );
 }

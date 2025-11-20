@@ -1,7 +1,6 @@
 import { Input, Label, Field, Button, Textarea } from '@headlessui/react';
 import { useFormik } from 'formik';
 import { useState } from 'react';
-import styles from "./AddMovieForm.module.scss";
 import { useCreateFilm } from '../../hooks/useCreateFilm';
 
 export default function AddMovieForm() {
@@ -55,7 +54,7 @@ export default function AddMovieForm() {
     };
 
     return (
-        <form className={styles["form-add-movie"]} onSubmit={formik.handleSubmit}>
+        <form className="form-add-movie" onSubmit={formik.handleSubmit}>
             <Field className='label-input-container'>
                 <Label htmlFor='title'>Title</Label>
                 <Input

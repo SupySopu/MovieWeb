@@ -1,10 +1,8 @@
-@import "../../scss/_variables.scss";
-
 .form-add-movie{
     padding: 100px;
     display: flex;
     flex-direction: column;
-    width: 80vh;
+    width: 80%;
 
     label {
         color: $font-default-color;

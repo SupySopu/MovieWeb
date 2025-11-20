@@ -1,6 +1,8 @@
+@import "../../scss/variables";
+
 .movie-id-index{
     background-color: $base-color;
-    height: 100vh;
+    height: 100%;
     padding: 90px 0 0 13vw;
     display: flex;
     gap: 5%;

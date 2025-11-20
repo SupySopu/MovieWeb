@@ -44,7 +44,7 @@ function Index() {
       </div>
 
       <div className='new-releases'>
-        <h1>Upcoming</h1>
+        <h1>New Releases</h1>
         <div className='new-releases-card-container'>
           {upcoming.length > 0 ? (
             upcoming.slice(0, 3).map(movie => (
