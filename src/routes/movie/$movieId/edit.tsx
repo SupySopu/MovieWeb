@@ -1,8 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
-import EditMovieForm from '../../components/EditMovieForm/EditMovieForm'
-import AddMovieImg from '../../components/AddMovieImg/AddMovieImg'
+import EditMovieForm from '../../../components/EditMovieForm/EditMovieForm'
+import AddMovieImg from '../../../components/AddMovieImg/AddMovieImg'
 
-export const Route = createFileRoute('/movie/edit')({  component: RouteComponent,
+export const Route = createFileRoute('/movie/$movieId/edit')({  component: RouteComponent,
 })
 
 function RouteComponent() {

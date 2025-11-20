@@ -1,23 +1,22 @@
 .search-bar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:2px;
-    padding: 10px;
-    margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  padding: 10px;
+  margin: 0;
 
-    .input-search-bar{
-        appearance: none;
-        padding: 8px;
-        padding-left: 16px;
-        font-size: 1.1rem;
-        width: 30%;
-        border: none;
-        border-radius: 10px 0 0 10px;
-        background-color: #090042;
-        color: #F4F4F4;
-    }
-
+  .input-search-bar{
+    appearance: none;
+    padding: 8px;
+    padding-left: 16px;
+    font-size: 1.1rem;
+    width: 30%;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    background-color: #090042;
+    color: #F4F4F4;
+  }
 } 
 
 .filter-order {

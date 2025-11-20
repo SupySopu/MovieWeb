@@ -9,13 +9,12 @@
         width: 250px;
         text-align: left;
 
-        img{
-            height: 180px;
+        img {
             width: 100%;
-            object-fit: cover;
+            height: auto;       
+            object-fit: cover;   
             border-radius: 16px;
             display: block;
-            
         }
 
         h3 {

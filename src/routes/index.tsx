@@ -8,6 +8,9 @@ import { useFetchMovies } from '../hooks/useFetchMovies'
 import { useMoviesStore } from '../stores/moviesStore'
 import ReactPaginate from 'react-paginate'
 import { useState } from 'react'
+import { useFetchUpcomingMovies } from '../hooks/useFetchUpcomingMovies'
+import { useUpcomingMoviesStore } from '../stores/upcomingMoviesStore'
+import { Button } from '@headlessui/react'
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -16,6 +19,8 @@ export const Route = createFileRoute('/')({
 function Index() {
   const [page, setPage] = useState(1);
   const { movies } = useMoviesStore();
+  const {} = useFetchUpcomingMovies();
+  const { upcoming } = useUpcomingMoviesStore();
   const { data } = useFetchMovies(page);
 
   const handlePageClick = (event: { selected: number }) => {
@@ -29,7 +34,7 @@ function Index() {
         <div className='text-container'>
           <h1>Search for any <span>movie</span>!</h1>
           <p>In this website you can search for information about any movie you want to see</p>
-          <HomeAddBtn/>
+          <Button className="home-add-btn">Add your movies</Button>
         </div>
 
         <div className="img-container">
@@ -39,11 +44,23 @@ function Index() {
       </div>
 
       <div className='new-releases'>
-        <h1>New Releases</h1>
+        <h1>Upcoming</h1>
         <div className='new-releases-card-container'>
-          <NewReleasesCard />
-          <NewReleasesCard />
-          <NewReleasesCard />
+          {upcoming.length > 0 ? (
+            upcoming.slice(0, 3).map(movie => (
+              <NewReleasesCard
+                key={movie.id}
+                id={movie.id}
+                title={movie.title}
+                vote_average={movie.vote_average}
+                poster_path={movie.poster_path}
+                release_date={movie.release_date}
+                overview={movie.overview.length > 150 ? movie.overview.slice(0, 150) + "..." : movie.overview}
+              />
+            ))
+          ) : (
+            <p>Cargando estrenos...</p>
+          )}
         </div>
       </div>
       

@@ -59,6 +59,8 @@ export type MovieDetails = {
 
 export type MovieCardProps = Pick<MovieApi, 'id' | 'title' | 'vote_average' | 'poster_path'>
 
+export type UpcomingMovieCardProps = Pick<MovieApi, 'id' | 'title' | 'vote_average' | 'poster_path' | 'release_date' | 'overview'>
+
 export type InfoMovieTableProps = Pick<MovieDetails, 'vote_average' | 'vote_count' |'popularity' | 'release_date' | "genres" >
 
 export type ImgMovieProp = Pick<MovieDetails, "poster_path"> 

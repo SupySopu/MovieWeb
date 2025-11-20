@@ -1,46 +1,65 @@
 .new-release-card {
-    border-radius: 16px;
-    padding: 16px;
-    background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.25);
+  display: flex;
+  width: 420px;
+  height: 200px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 
-    width: 420px;
-    height: 200px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  .content-area {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 12px;
+    flex: 1;
+  }
 
-    .poster{
-        background-color: $secondary-color;
-        width: 150px;
-        height: 200px;
-        display: flex;
+  .container-img {
+    width: 130px;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+    }
+  }
+
+  .content {
+    flex: 1;
+    color: $font-default-color;
+    display: flex;
+    flex-direction: column;
+
+    .title{
+        font-size: 1.5rem;
     }
 
-    .content{
-        color: $font-default-color;
-        flex-direction: column;
-
-        .author{
-            color: $secondary-color;
-            font-size: 1.3rem;
-        }
+    .release-date {
+      color: $secondary-color;
+      font-size: 1.3rem;
     }
 
-    .footer{
+    .description {
+      font-size: 1.1rem;
+      margin: 6px 0;
+      flex-grow: 1;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: auto;
+
+      .rating {
         display: flex;
-        flex-direction: row;
         align-items: center;
-        justify-content: space-between;
-        gap: 10px;
+        gap: 6px;
+        color: $font-default-color;
 
-        .rating{
-            color: $font-default-color;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 10px;
-
-            .score{
-                font-size: 1.7rem;
-            }
+        .score {
+          font-size: 1.4rem;
         }
+      }
     }
+  }
 }

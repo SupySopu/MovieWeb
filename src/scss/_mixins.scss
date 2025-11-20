@@ -61,19 +61,19 @@
 }
 
 %search-items-input{
-    width: 100%;
-    padding: 8px;
-    background-color: $base-lighter-color;
-    font-size: 1rem;
-    color: $font-default-color;
-    border: none;
-    appearance: none;
-    cursor: pointer;
+  width: 100%;
+  padding: 8px;
+  background-color: $base-lighter-color;
+  font-size: 1rem;
+  color: $font-default-color;
+  border: none;
+  appearance: none;
+  cursor: pointer;
     
-    background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-    background-repeat: no-repeat;
-    background-position: right 0.4rem center;
-    background-size: 1rem;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.4rem center;
+  background-size: 1rem;
 }
 
 .order {

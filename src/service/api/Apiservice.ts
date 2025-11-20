@@ -1,12 +1,12 @@
 import type { CastResponse } from "../../hooks/useFetchCastByMovie";
 import type { GenresResponse } from "../../hooks/useFetchGenre";
 import type { MoviesResponse } from "../../hooks/useFetchMovies";
+import type { UpcomingMoviesResponse } from "../../hooks/useFetchUpcomingMovies";
 import type { MovieApiSearchParams, MovieDetails } from "../../types/Movie";
 import { axiosInstance } from "./axiosInstance";
 
 // asegurar que el filtro no sea undefined
 const getMovies = async (page = 1, params: MovieApiSearchParams ):Promise<MoviesResponse> => {
-
     if (params.q) {
         const response = await axiosInstance.get(`/search/movie`, {
             params: { query: params.q, page }
@@ -38,10 +38,17 @@ const getGenres = async (): Promise<GenresResponse> => {
     return response.data;
 }
 
+const getUpcomingMovies = async (): Promise<UpcomingMoviesResponse>=> {
+  console.log("➡️ Fetching UPCOMING...");
+  const res = await axiosInstance.get("/movie/upcoming");
+  console.log("📩 Upcoming response:", res.data);
+  return res.data;
+};
 
 export const Apiservice = {
     getMovies, 
     getMovieById,
     getCast,
-    getGenres
+    getGenres,
+    getUpcomingMovies
 }
