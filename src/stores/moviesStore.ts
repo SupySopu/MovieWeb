@@ -10,14 +10,18 @@ interface MoviesState{
 }
 
 const initialState = {
-    movies: [],
-    params: {},
-}
+  movies: [],
+  params: {
+    q: "",
+    sort_by: undefined,
+    with_genres: undefined,
+  },
+};
 
 export const useMoviesStore = create<MoviesState>()(
     (set) => ({
         ...initialState, 
-        set: (newState) => set(newState),
+        set: (newState) => set((state) => ({ ...state, ...newState })),
         reset: () => set(initialState),
     })
 )

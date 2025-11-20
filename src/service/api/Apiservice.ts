@@ -6,13 +6,17 @@ import { axiosInstance } from "./axiosInstance";
 
 // asegurar que el filtro no sea undefined
 const getMovies = async (page = 1, params: MovieApiSearchParams ):Promise<MoviesResponse> => {
+
+    if (params.q) {
+        const response = await axiosInstance.get(`/search/movie`, {
+            params: { query: params.q, page }
+        });
+        return response.data;
+    }
+
     const response = await axiosInstance.get(`/discover/movie?page=${page}`, {params});
     return response.data;
 }
-
-// const getSearchMovieList = async(){
-//     const response = await axiosInstance.get(`/search/movie`)
-// }
 
 const getMovieById = async (id: number): Promise<MovieDetails> => {
     const response = await axiosInstance.get<MovieDetails>(`/movie/${id}`);
