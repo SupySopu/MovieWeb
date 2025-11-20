@@ -1,6 +1,5 @@
 // import FilterGenre from '../FilterGenre/FilterGenre'
-import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
-import FilterType from '../FilterType/FilterType'
+import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Select } from '@headlessui/react'
 import { useMoviesStore } from '../../stores/moviesStore'
 import { useState } from 'react'
 import FilterGenre from '../FilterGenre/FilterGenre'
@@ -13,6 +12,11 @@ const orderOptions = [
   {value: "popularity.asc", label: "Least Popular"},
   {value: "title.desc", label: "A - Z"},
   {value: "title.asc", label: "Z - A"}
+]
+
+const filterOptions = [
+  {value: "api", label:"API"},
+  {value: "local", label:"Community"}
 ]
 
 export default function Searchbar() {
@@ -51,32 +55,31 @@ export default function Searchbar() {
         handleGenresChange={handleGenresChange}
       />
 
-      <Listbox
-  value={selectedOrder}
-  onChange={handleSortChange}
-  as="div"
-  className="filter-order"
->
-  <ListboxButton className="filter-order-button">
-    {selectedOrder.label}
-  </ListboxButton>
+      <Listbox value={selectedOrder} onChange={handleSortChange} as="div" className="filter-order">
+        <ListboxButton className="filter-order-button">
+          {selectedOrder.label}
+        </ListboxButton>
 
-  <ListboxOptions anchor="bottom" className="filter-order-options">
-    {orderOptions.map((option) => (
-      <ListboxOption key={option.value} value={option}>
-        {({ active }) => (
-          <div
-            className={`filter-order-option ${active ? "active" : ""}`}
-          >
+        <ListboxOptions anchor="bottom" className="filter-order-options">
+          {orderOptions.map((option) => (
+            <ListboxOption key={option.value} value={option}>
+              {({ active }) => (
+                <div className={`filter-order-option ${active ? "active" : ""}`}>
+                  {option.label}
+                </div>
+              )}
+            </ListboxOption>
+          ))}
+        </ListboxOptions>
+      </Listbox>
+
+      <Select name="status" className="filter-type-input" aria-label="Movie Type">
+        {filterOptions.map(option => (
+          <option key={option.value} value={option.value}>
             {option.label}
-          </div>
-        )}
-      </ListboxOption>
-    ))}
-  </ListboxOptions>
-</Listbox>
-
-      <FilterType />
+          </option>
+        ))}
+      </Select>
     </div>
   )
 }

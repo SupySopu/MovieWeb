@@ -76,16 +76,6 @@
     background-size: 1rem;
 }
 
-.filter-type {
-  position: relative;
-  width: 100px;
-
-  .filter-type-input{
-    @extend %search-items-input;
-    border-radius: 0 10px 10px 0;
-  }
-}
-
 .order {
   position: relative;
   width: 100px;

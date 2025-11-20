@@ -61,3 +61,25 @@
     background-color: #06002D;
   }
 }
+
+.filter-type-input {
+  width: 140px;
+  padding: 7px;
+  background-color: #090042;
+  color: #F4F4F4;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  text-align: left;
+  border-radius: 0 10px 10px 0;
+
+  &:active {
+    background-color: #06002D;
+  }
+}
+
+.filter-type-input option {
+  background-color: #090042;
+  color: #F4F4F4;
+}
