@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router'
-import HomeAddBtn from '../components/HomeAddBtn/HomeAddBtn'
 import Moviecard from '../components/MovieCard/Moviecard'
 import Searchbar from '../components/Searchbar/Searchbar'
 import computer from "../assets/computer.png"
@@ -11,6 +10,10 @@ import { useState } from 'react'
 import { useFetchUpcomingMovies } from '../hooks/useFetchUpcomingMovies'
 import { useUpcomingMoviesStore } from '../stores/upcomingMoviesStore'
 import { Button } from '@headlessui/react'
+import { useFetchFilmList } from '../hooks/useFetchFilmsList'
+import MovieCardContainer from '../components/MovieCardContainer/MovieCardContainer'
+
+// 1ro: Probar state de type, 2do: Traerlo a index, 3ro: state en index
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -18,10 +21,11 @@ export const Route = createFileRoute('/')({
 
 function Index() {
   const [page, setPage] = useState(1);
-  const { movies } = useMoviesStore();
   const {} = useFetchUpcomingMovies();
   const { upcoming } = useUpcomingMoviesStore();
-  const { data } = useFetchMovies(page);
+  
+  const { data: apiMovies } = useFetchMovies(page);
+  const { data: localFilms } = useFetchFilmList();
 
   const handlePageClick = (event: { selected: number }) => {
     setPage(event.selected + 1);
@@ -59,7 +63,7 @@ function Index() {
               />
             ))
           ) : (
-            <p>Cargando estrenos...</p>
+            <p>Loading upcoming movies...</p>
           )}
         </div>
       </div>
@@ -67,20 +71,11 @@ function Index() {
       <div className="search">
         <h1>Search for any movie</h1>
         <Searchbar/>
-        <div className="container-movies">
-          {movies?.length > 0 ? (
-            movies.map((movies) => (
-            <Moviecard
-              key={movies.id}
-              id={movies.id}
-              title={movies.title}
-              vote_average={movies.vote_average}
-              poster_path={movies.backdrop_path}
-            />
-          ))) : (
-            <h3>0 movies found</h3>
-          )}
-        </div>
+        <MovieCardContainer 
+            apiMovies={apiMovies?.results ?? []} 
+            localMovies={localFilms ?? []}
+        />
+
         <div className='paginacion'>
           <ReactPaginate
             className='paginacion-items'
@@ -89,7 +84,7 @@ function Index() {
             onPageChange={handlePageClick}
             pageRangeDisplayed={3}
             marginPagesDisplayed={2}
-            pageCount={data?.total_pages ? 10 : 0}
+            pageCount={apiMovies?.total_pages ? 10 : 0}
             pageClassName="page-item"
             pageLinkClassName="page-link"
             previousClassName="page-item"

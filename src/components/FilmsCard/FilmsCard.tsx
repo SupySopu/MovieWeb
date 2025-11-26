@@ -4,12 +4,13 @@ import StarBtn from "../StarBtn/StarBtn";
 import { Link } from "@tanstack/react-router";
 import ConfMovieCard from "../ConfMovieCard/ConfMovieCard";
 import LocalTag from "../LocalTag/LocalTag";
-import type { MovieCardProps } from "../../types/Movie";
+import { useState } from "react";
 import placeholder from "../../assets/landscape-placeholder.png";
+import type { FilmCardProps } from "../../types/Films";
 
 // img default en lugar de div
 
-export default function Moviecard({id, title, vote_average, poster_path} : MovieCardProps) {
+export default function FilmsCard({id, title, vote_average, poster_path} : FilmCardProps) {
 
   // const [fav, setFav] = useState(isFav);
 
@@ -18,14 +19,14 @@ export default function Moviecard({id, title, vote_average, poster_path} : Movie
   // }
 
   return (
-    <div className="movie-card">
+    <div className="film-card">
       <ConfMovieCard />
           <Link to="/movie/$movieId" params={{movieId: String(id)}}>
             <Button className="redirect-card">
               <div className="container-img">
                 {
                   poster_path 
-                  ? <img src={`https://image.tmdb.org/t/p/w500${poster_path}`}/>
+                  ? <img src={poster_path}/>
                   : <img src={placeholder}/>
                 }
 

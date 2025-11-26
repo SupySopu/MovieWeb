@@ -39,9 +39,7 @@ const getGenres = async (): Promise<GenresResponse> => {
 }
 
 const getUpcomingMovies = async (): Promise<UpcomingMoviesResponse>=> {
-  console.log("➡️ Fetching UPCOMING...");
   const res = await axiosInstance.get("/movie/upcoming");
-  console.log("📩 Upcoming response:", res.data);
   return res.data;
 };
 

@@ -23,11 +23,17 @@ export default function Searchbar() {
   const { params, set } = useMoviesStore()
   const data = useFetchGenre();
   const [ selectedOrder, setSelectedOrder] = useState(orderOptions[0])
-
   
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     set({ params: { ...params, q: e.target.value } });
   };
+
+  const handleTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value;
+    set({ type: value })
+    
+    console.log(value)
+  }
 
   const handleSortChange = (option: { value: string; label: string }) => {
     set({ params: { ...params, sort_by: option.value }})
@@ -73,7 +79,7 @@ export default function Searchbar() {
         </ListboxOptions>
       </Listbox>
 
-      <Select name="status" className="filter-type-input" aria-label="Movie Type">
+      <Select name="status" className="filter-type-input" aria-label="Movie Type" onChange={handleTypeChange}>
         {filterOptions.map(option => (
           <option key={option.value} value={option.value}>
             {option.label}

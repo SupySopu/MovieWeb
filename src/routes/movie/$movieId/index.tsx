@@ -2,9 +2,11 @@ import { createFileRoute, useParams } from '@tanstack/react-router'
 import InfoMovieTable from '../../../components/InfoMovieTable/InfoMovieTable'
 import ImgMovie from '../../../components/ImgMovie/ImgMovie'
 import { useFetchMovieById } from '../../../hooks/useFetchMovieById';
+import { useFetchFilmById } from '../../../hooks/useFetchFilmById';
 import CastList from '../../../components/CastList/CastList';
 import { useCastStore } from '../../../stores/castStore';
 import { useFetchCast } from '../../../hooks/useFetchCastByMovie';
+import { useMoviesStore } from '../../../stores/moviesStore';
 import styles from "../../../screens/movie/movieIdIndex.module.scss"
 
 export const Route = createFileRoute('/movie/$movieId/')({
@@ -13,12 +15,15 @@ export const Route = createFileRoute('/movie/$movieId/')({
 
 function RouteComponent() {
   const { movieId } = useParams({ from: "/movie/$movieId/" });
-  const { data: movie, isLoading, error } = useFetchMovieById(Number(movieId));
+
+  const { type } = useMoviesStore();
+
+  const { data: movie } = type === "local"
+    ? useFetchFilmById(movieId)
+    : useFetchMovieById(Number(movieId));
+
   const { cast } = useCastStore();
   useFetchCast();
-
-  if (isLoading) return <p>Loading...</p>;
-  if (error || !movie) return <p>Error al cargar la película</p>;
 
   return (
     <div className={styles["movie-id-index"]}>

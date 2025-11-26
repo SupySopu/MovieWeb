@@ -12,30 +12,29 @@ export default function AddMovieForm() {
     const formik = useFormik({
         initialValues: {
             title: '',
-            originalTitle: '',
-            lang: '',
-            author: '',
-            releaseDate: '',
-            tags: [] as string[],
-            synopsis: '',
-            cast: [] as string[]
+            original_title: '',
+            original_language: '',
+            release_date: '',
+            genres: [],
+            overview: '',
+            cast: []
         },
         onSubmit: (values) => {
-            mutation.mutate({title: "fsfa", originalTitle:"dfisdjf", lang:"hu", author:"odafdf", releaseDate:"22112000", tags:["dsfaf", "afdsf", "fssaf"], synopsis:"asjdaifds", cast:["dmfadsf"]})
+            mutation.mutate(values);
         }
     })
 
     const addTag = () => {
-        if (tagInput.trim() !== '' && !formik.values.tags.includes(tagInput.trim())) {
-        formik.setFieldValue('tags', [...formik.values.tags, tagInput.trim()]);
+        if (tagInput.trim() !== '' && !formik.values.genres.includes(tagInput.trim())) {
+        formik.setFieldValue('genres', [...formik.values.genres, tagInput.trim()]);
         setTagInput('');
         }
     };
 
     const removeTag = (tag: string) => {
         formik.setFieldValue(
-        'tags',
-        formik.values.tags.filter(t => t !== tag)
+        'genres',
+        formik.values.genres.filter(t => t !== tag)
         );
     };
 
@@ -69,69 +68,57 @@ export default function AddMovieForm() {
 
             <div className='og-title-lang-container'>
                 <Field className='label-input-container'>
-                    <Label htmlFor='originalTitle'>Original Title</Label>
+                    <Label htmlFor='original_title'>Original Title</Label>
                     <Input
-                        id="originalTitle"
-                        name="originalTitle"
+                        id="original_title"
+                        name="original_title"
                         type="text"
                         onChange={formik.handleChange}
-                        value={formik.values.originalTitle}
+                        value={formik.values.original_title}
                         placeholder='Input your original title here...'
                     />
                 </Field>
 
                 <Field className='label-input-container'>
-                    <Label htmlFor='lang'>Language</Label>
+                    <Label htmlFor='original_language'>original_languageuage</Label>
                     <Input
-                        id="lang"
-                        name="lang"
+                        id="original_language"
+                        name="original_language"
                         type="text"
                         onChange={formik.handleChange}
-                        value={formik.values.lang}
+                        value={formik.values.original_language}
                     />
                 </Field>
             </div>
 
                 <Field className='label-input-container'>
-                    <Label htmlFor='author'>Author</Label>
+                    <Label htmlFor='release_date'>Release Date</Label>
                     <Input
-                        id="author"
-                        name="author"
-                        type="text"
-                        onChange={formik.handleChange}
-                        value={formik.values.author}
-                        placeholder="Input your author here..."
-                    />
-                </Field>
-
-                <Field className='label-input-container'>
-                    <Label htmlFor='releaseDate'>Release Date</Label>
-                    <Input
-                        id="releaseDate"
-                        name="releaseDate"
+                        id="release_date"
+                        name="release_date"
                         type="date"
                         onChange={formik.handleChange}
-                        value={formik.values.releaseDate}
+                        value={formik.values.release_date}
                     />
                 </Field>
 
                 <Field className='label-input-container'>
-                    <Label htmlFor='synopsis'>Synopsis</Label>
+                    <Label htmlFor='overview'>Synopsis</Label>
                     <Textarea
-                        id="synopsis"
-                        name="synopsis"
+                        id="overview"
+                        name="overview"
                         onChange={formik.handleChange}
-                        value={formik.values.synopsis}
-                        placeholder='Input your synopsis here...'
+                        value={formik.values.overview}
+                        placeholder='Input your overview here...'
                     />
                 </Field>
 
             <Field className='label-input-container'>
                 <div className="input-search-container">
-                <Label htmlFor='tags'>Tags</Label>
+                <Label htmlFor='genres'>Tags</Label>
                 <Input 
-                    id="tags"
-                    name="tags"
+                    id="genres"
+                    name="genres"
                     type="text"
                     value={tagInput}
                     onChange={(e) => setTagInput(e.target.value)}
@@ -140,7 +127,7 @@ export default function AddMovieForm() {
                 </div>
 
                 <div className="tags-container">
-                    {formik.values.tags.map((tag, id) => (
+                    {formik.values.genres.map((tag, id) => (
                         <Button 
                         type="button" 
                         key={id} 
