@@ -56,7 +56,6 @@ export type MovieDetails = {
   vote_count: number
 }
 
-
 export type MovieCardProps = Pick<MovieApi, 'id' | 'title' | 'vote_average' | 'poster_path'>
 
 export type UpcomingMovieCardProps = Pick<MovieApi, 'id' | 'title' | 'vote_average' | 'poster_path' | 'release_date' | 'overview'>

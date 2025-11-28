@@ -1,127 +1,35 @@
 {
   "userFilms": [
     {
-      "id": "a460",
-      "title": "fsfa",
-      "originalTitle": "dfisdjf",
-      "lang": "hu",
-      "author": "odafdf",
-      "releaseDate": "22112000",
-      "tags": [
-        "dsfaf",
-        "afdsf",
-        "fssaf"
+      "id": "4e52",
+      "title": "test1",
+      "original_title": "test1",
+      "original_language": "eng",
+      "release_date": "2222-02-22",
+      "poster_path": "",
+      "genres": [
+        {
+          "id": 10751,
+          "name": "Family"
+        }
       ],
-      "synopsis": "asjdaifds",
-      "cast": [
-        "dmfadsf"
-      ]
+      "overview": "222",
+      "cast": []
     },
     {
-      "id": "a5cb",
-      "title": "fsfa",
-      "originalTitle": "dfisdjf",
-      "lang": "hu",
-      "author": "odafdf",
-      "releaseDate": "22112000",
-      "tags": [
-        "dsfaf",
-        "afdsf",
-        "fssaf"
+      "id": "7b97",
+      "title": "test1",
+      "original_title": "test1",
+      "original_language": "eng",
+      "release_date": "2222-02-22",
+      "poster_path": "../../assets/landscape-placeholder.png",
+      "genres": [
+        {
+          "id": 10751,
+          "name": "Family"
+        }
       ],
-      "synopsis": "asjdaifds",
-      "cast": [
-        "dmfadsf"
-      ]
-    },
-    {
-      "id": "a657",
-      "title": "",
-      "original_title": "",
-      "original_language": "",
-      "release_date": "",
-      "genres": [],
-      "overview": "",
-      "cast": []
-    },
-    {
-      "id": "c673",
-      "title": "isjfoisjfs",
-      "original_title": "fdsiojfdsai",
-      "original_language": "en",
-      "release_date": "2000-01-22",
-      "genres": [],
-      "overview": "sdfiasdfoafij",
-      "cast": []
-    },
-    {
-      "id": "f3e0",
-      "title": "u8uuhuijoijoij",
-      "original_title": "jijijo",
-      "original_language": "ijoij",
-      "release_date": "2000-01-22",
-      "genres": [],
-      "overview": "dsfdsffdsa",
-      "cast": []
-    },
-    {
-      "id": "308c",
-      "title": "u8uuhuijoijoij",
-      "original_title": "jijijo",
-      "original_language": "ijoij",
-      "release_date": "2000-01-22",
-      "genres": [],
-      "overview": "dsfdsffdsa",
-      "cast": []
-    },
-    {
-      "id": "44cb",
-      "title": "test 1",
-      "original_title": "test 1",
-      "original_language": "eng",
-      "release_date": "2000-02-01",
-      "genres": [],
-      "overview": "testeando",
-      "cast": []
-    },
-    {
-      "id": "ba12",
-      "title": "test 1",
-      "original_title": "test 1",
-      "original_language": "eng",
-      "release_date": "2000-02-01",
-      "genres": [],
-      "overview": "testeando",
-      "cast": []
-    },
-    {
-      "id": "d39a",
-      "title": "test 1",
-      "original_title": "test 1",
-      "original_language": "eng",
-      "release_date": "2000-02-01",
-      "genres": [],
-      "overview": "testeando",
-      "cast": []
-    },
-    {
-      "id": "2453",
-      "title": "test 1",
-      "original_title": "test 1",
-      "original_language": "eng",
-      "release_date": "2000-02-01",
-      "genres": [],
-      "overview": "testeando",
-      "cast": []
-    },
-    {
-      "id": "df77",
-      "title": "test 1",
-      "original_title": "test 1",
-      "original_language": "eng",
-      "release_date": "2000-02-01",
-      "genres": [],
-      "overview": "testeando",
+      "overview": "222",
       "cast": []
     }
   ]

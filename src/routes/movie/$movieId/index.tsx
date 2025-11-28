@@ -25,6 +25,8 @@ function RouteComponent() {
   const { cast } = useCastStore();
   useFetchCast();
 
+  if (!movie) return <p>Loading...</p>;
+
   return (
     <div className={styles["movie-id-index"]}>
       

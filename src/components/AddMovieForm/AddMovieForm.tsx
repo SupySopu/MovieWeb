@@ -2,39 +2,58 @@ import { Input, Label, Field, Button, Textarea } from '@headlessui/react';
 import { useFormik } from 'formik';
 import { useState } from 'react';
 import { useCreateFilm } from '../../hooks/useCreateFilm';
+import FilterGenre from '../FilterGenre/FilterGenre';
+import { useFetchGenre } from '../../hooks/useFetchGenre';
+import type { Genres } from '../../types/Movie';
+
+interface MovieForm {
+  title: string;
+  original_title: string;
+  original_language: string;
+  release_date: string;
+  poster_path: string;
+  genres: Genres[];
+  overview: string;
+  cast: string[];
+}
 
 export default function AddMovieForm() {
-    const [tagInput, setTagInput] = useState('');
     const [castInput, setCastInput] = useState('');
+
+    const data = useFetchGenre();
 
     const mutation = useCreateFilm();
 
-    const formik = useFormik({
+    const formik = useFormik<MovieForm>({
         initialValues: {
             title: '',
             original_title: '',
             original_language: '',
             release_date: '',
+            poster_path: '',
             genres: [],
             overview: '',
             cast: []
         },
+        // Hacer validacion(toast o vista Home) para el user y que se conecte con el onSuccess
         onSubmit: (values) => {
             mutation.mutate(values);
+            if (!values.poster_path) {
+                values.poster_path = "../../assets/landscape-placeholder.png";
+            }
         }
     })
 
-    const addTag = () => {
-        if (tagInput.trim() !== '' && !formik.values.genres.includes(tagInput.trim())) {
-        formik.setFieldValue('genres', [...formik.values.genres, tagInput.trim()]);
-        setTagInput('');
+    const handleGenresChange = (selected: Genres) => {
+        if (!formik.values.genres.some(g => g.id === selected.id)) {
+            formik.setFieldValue("genres", [...formik.values.genres, selected]);
         }
     };
 
-    const removeTag = (tag: string) => {
+    const removeTag = (id: number) => {
         formik.setFieldValue(
-        'genres',
-        formik.values.genres.filter(t => t !== tag)
+            'genres',
+            formik.values.genres.filter((g) => g.id !== id)
         );
     };
 
@@ -54,6 +73,7 @@ export default function AddMovieForm() {
 
     return (
         <form className="form-add-movie" onSubmit={formik.handleSubmit}>
+
             <Field className='label-input-container'>
                 <Label htmlFor='title'>Title</Label>
                 <Input
@@ -114,30 +134,28 @@ export default function AddMovieForm() {
                 </Field>
 
             <Field className='label-input-container'>
-                <div className="input-search-container">
-                <Label htmlFor='genres'>Tags</Label>
-                <Input 
-                    id="genres"
-                    name="genres"
-                    type="text"
-                    value={tagInput}
-                    onChange={(e) => setTagInput(e.target.value)}
-                />
-                <Button type="button" className='tag-btn' onClick={addTag}>X</Button>
-                </div>
+                <Field className='label-input-container'>
+                    <Label htmlFor='genres'>Genres</Label>
 
-                <div className="tags-container">
-                    {formik.values.genres.map((tag, id) => (
-                        <Button 
-                        type="button" 
-                        key={id} 
+                    <FilterGenre
+                        genresList={data?.genres ?? []}
+                        handleGenresChange={handleGenresChange}
+                    />
+
+                    <div className="tags-container">
+                    {formik.values.genres.map((genre) => (
+                        <Button
+                        type="button"
+                        key={genre.id}
                         className="tag-item"
-                        onClick={() => removeTag(tag)}
+                        onClick={() => removeTag(genre.id)}
                         >
-                        {tag} x
+                        {genre.name} ×
                         </Button>
                     ))}
-                </div>
+                    </div>
+
+                </Field>
             </Field>
 
             <Field className='label-input-container'>

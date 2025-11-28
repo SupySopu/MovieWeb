@@ -15,11 +15,11 @@ const getFilms = async () => {
 const getFilmById = async (id: string) => {
     const response = await serverAxiosInstance.get(`/userFilms/${id}`);
     
-        if (!response.data) {
-          throw new Error("Movie not found");
-        }
+    if (!response.data) {
+      throw new Error("Movie not found");
+    }
         
-        return response.data;
+    return response.data;
 }
 
 export const Serverservice = {
