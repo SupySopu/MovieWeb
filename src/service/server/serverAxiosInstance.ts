@@ -1,9 +1,8 @@
 import axios from 'axios';
-
-const DUMMYJSON_BASE_URL = 'http://localhost:3001';
+import { URL } from '../../data/constants';
 
 export const serverAxiosInstance = axios.create({
-    baseURL: DUMMYJSON_BASE_URL,
+    baseURL: URL.local,
     timeout: 10000,
     headers: {
         'Content-Type': 'application/json',

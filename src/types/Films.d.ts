@@ -15,6 +15,11 @@ export type FilmsLocal = {
   vote_count: number
 }
 
+export type CastTagLocalProps = {
+    id: number,
+    name: string,
+}
+
 export type InfoFilmTableProps = Pick<FilmsLocal, 'vote_average' | 'vote_count' |'popularity' | 'release_date' | "genres" >
 
 export type ImgFilmProp = Pick<FilmsLocal   , "poster_path"> 

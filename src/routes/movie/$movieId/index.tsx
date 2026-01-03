@@ -8,6 +8,7 @@ import { useCastStore } from '../../../stores/castStore';
 import { useFetchCast } from '../../../hooks/useFetchCastByMovie';
 import { useMoviesStore } from '../../../stores/moviesStore';
 import styles from "../../../screens/movie/movieIdIndex.module.scss"
+import CastListLocal from '../../../components/CastListLocal/CastListLocal';
 
 export const Route = createFileRoute('/movie/$movieId/')({
   component: RouteComponent,
@@ -54,7 +55,11 @@ function RouteComponent() {
         <div className={styles["cast-div"]}>
           <h3>Cast</h3>
           <hr />
-          <CastList cast={cast} />
+          {type === "local" ? (
+            <CastListLocal cast={movie.cast} />
+          ) : (
+            <CastList cast={cast} />
+          )}
         </div>
 
       </div>

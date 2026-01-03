@@ -39,7 +39,7 @@ export default function AddMovieForm() {
         onSubmit: (values) => {
             mutation.mutate(values);
             if (!values.poster_path) {
-                values.poster_path = "../../assets/landscape-placeholder.png";
+                values.poster_path = "";
             }
         }
     })
@@ -169,7 +169,7 @@ export default function AddMovieForm() {
                     value={castInput}
                     onChange={(e) => setCastInput(e.target.value)}
                 />
-                <Button type="button" className='cast-btn' onClick={addCast}>X</Button>
+                <Button type="button" className='cast-btn'onClick={addCast}>X</Button>
                 </div>
 
                     
