@@ -10,3 +10,4 @@ Trying to remake the website with the knowledge I've learned over the months.
 - routes + screens
 - distinguish better between local and api movies
 - Clean types
+- Custom hook for forms
