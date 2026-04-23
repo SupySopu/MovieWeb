@@ -1,9 +1,9 @@
 import type { CastResponse } from "../../hooks/useFetchCastByMovie";
-import type { UpcomingMoviesResponse } from "../../hooks/useFetchUpcomingMovies";
 import { axiosInstance } from "./axiosInstance";
 import type { ApiMovieDetails, ApiMovieSearchParams } from "../../types/apiMovie";
 import type { GenresResponse } from "../../hooks/useFetchApiGenre";
 import type { MoviesResponse } from "../../hooks/useFetchApiMovies";
+import type { UpcomingMoviesResponse } from "../../hooks/useFetchApiUpcomingMovies";
 
 // asegurar que el filtro no sea undefined
 const getMovies = async (page = 1, params: ApiMovieSearchParams ):Promise<MoviesResponse> => {
