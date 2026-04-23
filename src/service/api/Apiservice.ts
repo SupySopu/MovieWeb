@@ -15,6 +15,7 @@ const getMovies = async (page = 1, params: ApiMovieSearchParams ):Promise<Movies
     }
 
     const response = await axiosInstance.get(`/discover/movie?page=${page}`, {params});
+    console.log(response);
     return response.data;
 }
 
@@ -24,22 +25,27 @@ const getMovieById = async (id: number): Promise<ApiMovieDetails> => {
     if (!response.data){
         throw new Error("Movie not found");
     }
-
+    //console.log(response);
     return response.data;
 }
 
 const getGenres = async (): Promise<GenresResponse> => {
     const response = await axiosInstance.get("/genre/movie/list");
+    //console.log(response);
     return response.data;
 }
 
 const getUpcomingMovies = async (): Promise<UpcomingMoviesResponse>=> {
-    const res = await axiosInstance.get("/movie/upcoming");
-    return res.data;
+    const response = await axiosInstance.get("/movie/upcoming");
+
+    //console.log(response.data);
+    return response.data;
 };
 
 const getCastByMovieId = async (id: number): Promise<CastResponse> => {
     const response = await axiosInstance.get(`/movie/${id}/credits`)
+
+    //console.log(response);
     return response.data;
 }
 

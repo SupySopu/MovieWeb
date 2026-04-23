@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { Genres } from "../types/apiMovie";
+import type { Genres } from "../../types/apiMovie";
 
 export interface GenresState{
     genres: Genres[];
