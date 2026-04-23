@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { Cast } from "../types/Cast";
+import type { Cast } from "../../types/Cast";
 
 interface CastState{
     cast: Cast[], 

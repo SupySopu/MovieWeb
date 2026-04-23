@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import { Apiservice } from "../service/api/Apiservice"
 import type { ApiMovieDetails } from "../types/apiMovie"
-import { useApiMovieIdStore } from "../stores/apiMovieIdStore"
+import { useApiMovieIdStore } from "../stores/api/apiMovieIdStore"
 import { useEffect } from "react"
 
 export const useFetchApiMovieById = (apiMovieId: number) => {

@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import type { ApiMovie } from "../types/apiMovie";
 import { Apiservice } from "../service/api/Apiservice";
 import { useEffect } from "react";
-import { useApiMoviesStore } from "../stores/apiMoviesStore";
+import { useApiMoviesStore } from "../stores/api/apiMoviesStore";
 
 export interface MoviesResponse {
     page: number,

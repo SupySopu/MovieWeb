@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Apiservice } from "../service/api/Apiservice";
 import { useEffect } from "react";
-import { useApiGenresStore } from "../stores/apiGenreStore";
+import { useApiGenresStore } from "../stores/api/apiGenreStore";
 import type { Genres } from "../types/apiMovie";
 
 export interface GenresResponse {

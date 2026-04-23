@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { ApiMovie } from "../types/apiMovie";
+import type { ApiMovie } from "../../types/apiMovie";
 
 interface UpcomingMoviesResponse {
     upcoming: ApiMovie[];
