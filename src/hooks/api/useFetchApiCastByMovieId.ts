@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import type { Cast } from "../types/Cast";
-import { Apiservice } from "../service/api/Apiservice";
+import type { Cast } from "../../types/Cast";
+import { Apiservice } from "../../service/api/Apiservice";
 import { useEffect } from "react";
-import { useCastMovieIdStore } from "../stores/api/apiCastMovieIdStore";
-import { useApiMovieIdStore } from "../stores/api/apiMovieIdStore";
+import { useCastMovieIdStore } from "../../stores/api/apiCastMovieIdStore";
+import { useApiMovieIdStore } from "../../stores/api/apiMovieIdStore";
 
 export interface CastResponse{
     id: number,
