@@ -14,3 +14,34 @@
         text-align: center;
     }
 }
+
+/* Pagination div*/
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+
+    .paginationItems {
+        color: black;
+        background-color: white;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+    }
+
+    .pageItem{
+        display: inline-block;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .pageLink {
+        display: block;
+        padding: 6px 12px;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+}
