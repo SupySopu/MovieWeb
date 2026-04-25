@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { ApiMovie, ApiMovieSearchParams } from "../types/apiMovie";
+import type { ApiMovie, ApiMovieSearchParams } from "../../types/Movie";
 
 interface MoviesState{
     movies: ApiMovie[];

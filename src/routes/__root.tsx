@@ -1,4 +1,5 @@
 import { createRootRoute, Outlet, useRouterState } from '@tanstack/react-router'
+import NavBar from '../components/NavBar/NavBar'
 
 export const RootLayout = () => {
   const { location } = useRouterState()
@@ -8,7 +9,7 @@ export const RootLayout = () => {
       break
     case '/favourites':
       break
-    case '/addMovie':
+    case '/createMovie':
       break
     default:
       break
@@ -16,7 +17,8 @@ export const RootLayout = () => {
 
   return (
     <div className="root-layout">
-        <Outlet />
+      <NavBar />
+      <Outlet />
     </div>
   )
 }

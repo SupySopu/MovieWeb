@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { ApiMovieDetails } from "../types/apiMovie";
+import type { ApiMovieDetails } from "../../types/Movie";
 
 interface MovieState{
     movie: ApiMovieDetails | null,

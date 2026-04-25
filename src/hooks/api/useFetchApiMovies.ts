@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import type { ApiMovie } from "../../types/apiMovie";
+import type { ApiMovie } from "../../types/Movie";
 import { Apiservice } from "../../service/api/Apiservice";
 import { useEffect } from "react";
 import { useApiMoviesStore } from "../../stores/api/apiMoviesStore";

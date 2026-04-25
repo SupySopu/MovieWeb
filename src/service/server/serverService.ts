@@ -1,4 +1,4 @@
-import type { LocalMovie } from "../../types/localMovie";
+import type { LocalMovie } from "../../types/Movie";
 import serverAxiosInstance from "./serverAxiosInstance"
 
 // el type quizas cambia

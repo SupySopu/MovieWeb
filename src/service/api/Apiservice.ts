@@ -1,5 +1,5 @@
 import { axiosInstance } from "./axiosInstance";
-import type { ApiMovieDetails, ApiMovieSearchParams } from "../../types/apiMovie";
+import type { ApiMovieDetails, ApiMovieSearchParams } from "../../types/Movie";
 import type { GenresResponse } from "../../hooks/api/useFetchApiGenre";
 import type { MoviesResponse } from "../../hooks/api/useFetchApiMovies";
 import type { UpcomingMoviesResponse } from "../../hooks/api/useFetchApiUpcomingMovies";
