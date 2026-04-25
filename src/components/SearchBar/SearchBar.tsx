@@ -4,6 +4,7 @@ import { useApiMoviesStore } from "../../stores/api/apiMoviesStore"
 import "./SearchBar.scss"
 import type { Genres } from "../../types/Movie";
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Select } from "@headlessui/react";
+import FilterGenre from "../FilterGenre/FilterGenre";
 
 export default function SearchBar() {
 
@@ -55,6 +56,11 @@ export default function SearchBar() {
                 placeholder="Enter a movie title..."
                 onChange={handleSearchChange}
                 value={params.q || ""}
+            />
+
+            <FilterGenre 
+                genresList={data?.genres ?? []}
+                handleGenresChange={handleGenresChange}
             />
 
             <Listbox value={selectedOrder} onChange={handleSortChange} as="div" className="filterOrder">
