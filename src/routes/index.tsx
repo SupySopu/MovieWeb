@@ -5,6 +5,7 @@ import { useFetchApiMovies } from '../hooks/api/useFetchApiMovies';
 import { useFetchLocalMovies } from '../hooks/local/useFetchLocalMovies';
 import MovieCardContainer from '../components/MovieCardContainer/MovieCardContainer';
 import "./screens/index.scss";
+import SearchBar from '../components/SearchBar/SearchBar';
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
@@ -27,6 +28,7 @@ function RouteComponent() {
     <div className='home'>
 
       <div className='search'>
+        <SearchBar />
         <h2>Search for any movie</h2>
         <MovieCardContainer 
           apiMovies={apiMovies?.results ?? []}

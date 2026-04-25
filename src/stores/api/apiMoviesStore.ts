@@ -16,6 +16,7 @@ const initialState = {
         q: "",
         sort_by: undefined,
         with_genres: undefined,
+        adult: false
     },
 
     type: "api"
