@@ -1,0 +1,52 @@
+.movieCard{
+    position: relative;
+    margin: 2% 2% 0 2%;
+
+    .redirectCard{
+        background-color: transparent;
+        border: none;
+        height: 250px;
+        text-align: left;
+
+        img {
+            height: 100%;
+            width: 100%;
+            border-radius: 16px;
+            display: block;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: black;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+    }
+
+    .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            h3{  
+                font-size: 1.5rem;
+                color: black;
+            }
+        }
+
+        .right {
+            margin: 0;
+            align-items: center;
+        }
+    }
+}

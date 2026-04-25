@@ -7,5 +7,5 @@ export const Route = createFileRoute('/movie/$movieId/')({
 function RouteComponent() {
   const { movieId } = useParams({ from: "/movie/$movieId/" });
 
-  return <div>Hello "/movie/"!</div>
+  return <div>Hello "/movie/$movieId"!</div>
 }

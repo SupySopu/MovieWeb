@@ -4,6 +4,7 @@ import ReactPaginate from 'react-paginate';
 import { useFetchApiMovies } from '../hooks/api/useFetchApiMovies';
 import { useFetchLocalMovies } from '../hooks/local/useFetchLocalMovies';
 import MovieCardContainer from '../components/MovieCardContainer/MovieCardContainer';
+import "./screens/index.scss";
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
@@ -25,33 +26,36 @@ function RouteComponent() {
   return (
     <div className='home'>
 
-      <MovieCardContainer 
-        apiMovies={apiMovies?.results ?? []}
-        localMovies={localMovies ?? []}
-      />
-
-      <div className='pagination'>
-        <ReactPaginate 
-          className='paginationItems'
-          previousLabel="< Previous"
-          nextLabel="Next >"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={3}
-          marginPagesDisplayed={2}
-          pageCount={apiMovies?.total_pages ? 10 : 0}
-          pageClassName='pageItem'
-          pageLinkClassName='pageLink'
-          previousClassName='pageItem'
-          previousLinkClassName='pageLink'
-          nextClassName='pageItem'
-          nextLinkClassName='pageLink'
-          breakLabel="..."
-          breakClassName='pageItem'
-          breakLinkClassName='pageLink'
-          containerClassName='pagination'
-          activeClassName='active'
-          renderOnZeroPageCount={null}
+      <div className='search'>
+        <h2>Search for any movie</h2>
+        <MovieCardContainer 
+          apiMovies={apiMovies?.results ?? []}
+          localMovies={localMovies ?? []}
         />
+
+        <div className='pagination'>
+          <ReactPaginate 
+            className='paginationItems'
+            previousLabel="< Previous"
+            nextLabel="Next >"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={3}
+            marginPagesDisplayed={2}
+            pageCount={apiMovies?.total_pages ? 10 : 0}
+            pageClassName='pageItem'
+            pageLinkClassName='pageLink'
+            previousClassName='pageItem'
+            previousLinkClassName='pageLink'
+            nextClassName='pageItem'
+            nextLinkClassName='pageLink'
+            breakLabel="..."
+            breakClassName='pageItem'
+            breakLinkClassName='pageLink'
+            containerClassName='pagination'
+            activeClassName='active'
+            renderOnZeroPageCount={null}
+          />
+        </div>
       </div>
     </div>
   )

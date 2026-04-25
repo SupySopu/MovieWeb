@@ -4,6 +4,7 @@ import type { MovieCardProps } from "../../types/Movie";
 import placeholder from "../../assets/landscape-placeholder.png"
 import { CiStar } from "react-icons/ci";
 import HeartFavourites from "../HeartFavourites/HeartFavourites";
+import "./MovieCard.scss"
 
 export default function MovieCard({id, title, vote_average, poster_path} : MovieCardProps){
 
@@ -22,12 +23,12 @@ export default function MovieCard({id, title, vote_average, poster_path} : Movie
                 </Button>
             </Link>
 
-            <div>
-                <div>
+            <div className="info">
+                <div className="left">
                     <CiStar className="iconStar" />
                     <h3 className="rating">{vote_average}</h3>
                 </div>
-                <div>
+                <div className="right">
                     <HeartFavourites 
                      id={id}
                     />

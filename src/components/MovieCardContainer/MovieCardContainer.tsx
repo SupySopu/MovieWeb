@@ -1,5 +1,6 @@
 import { useApiMoviesStore } from "../../stores/api/apiMoviesStore"
 import MovieCard from "../MovieCard/MovieCard";
+import "./MovieCardContainer.scss"
 
 interface movieContainerProps {
     apiMovies: any[];
@@ -12,7 +13,7 @@ export default function MovieCardContainer({ apiMovies, localMovies } : movieCon
     const moviesToShow = type == "api" ? apiMovies : localMovies;
     
     return (
-        <div>
+        <div className="containerMovies">
             {moviesToShow.length > 0 ? (
                 moviesToShow.map((movie) => (
                     <MovieCard 
