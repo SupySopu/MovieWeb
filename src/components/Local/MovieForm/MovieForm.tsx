@@ -1,57 +1,15 @@
-import { useFormik } from "formik";
 import { useFetchApiGenre } from "../../../hooks/api/useFetchApiGenre"
-import { useCreateLocalMovie } from "../../../hooks/local/useCreateLocalMovie";
 import "./MovieForm.scss"
-import type { Genres } from "../../../types/Movie";
 import { Button, Field, Fieldset, Input, Label, Legend, Textarea } from "@headlessui/react";
 import FilterGenre from "../../FilterGenre/FilterGenre";
-
-interface MovieForm {
-    title: string,
-    original_title: string,
-    original_language: string,
-    release_date: string,
-    poster_path: string,
-    overview: string,
-    genres: Genres[],
-}
+import { useMovieForm } from "../../../hooks/local/useMovieForm";
 
 export default function MovieForm() {
+
+    const { formik, castInput, setCastInput, handleGenresTagChange, handleGenreTagRemove, handleCastInput, handleCastRemove} = useMovieForm();
+
     // fetch genres
     const data = useFetchApiGenre();
-    // mutate to create movie
-    const mutation = useCreateLocalMovie();
-
-    // initial values Formik
-    const formik = useFormik<MovieForm>({
-        initialValues: {
-            title: "",
-            original_title: "",
-            original_language:"",
-            release_date: "",
-            poster_path: "",
-            overview: "",
-            genres: []
-        },
-
-        onSubmit: (values) => {
-            mutation.mutate(values);
-            if ( !values.poster_path ){
-                values.poster_path = "";
-            }
-        }
-    })
-
-    // Genres handlers
-    const handleGenresChange = ( selected: Genres ) => {
-        if ( !formik.values.genres.some(g => g.id === selected.id) ){
-            formik.setFieldValue("genres", [...formik.values.genres, selected])
-        }
-    }
-
-    const handleGenreRemove = ( id: number ) => {
-        formik.setFieldValue("genres", formik.values.genres.filter(g => g.id !== id))
-    }
 
     return (
         <form onSubmit={formik.handleSubmit}>
@@ -109,7 +67,7 @@ export default function MovieForm() {
 
                     <FilterGenre 
                         genresList={data?.genres ?? []}
-                        handleGenresChange={handleGenresChange}
+                        handleGenresChange={ handleGenresTagChange }
                     />
 
                     <div className="tagsContainer">
@@ -118,10 +76,36 @@ export default function MovieForm() {
                                 key={genre.id}
                                 type="button"
                                 className="tagItem"
-                                onClick={() => handleGenreRemove(genre.id)}
+                                onClick={() => handleGenreTagRemove(genre.id)}
                             >
                                 {genre.name} X
                             </Button>
+                        ))}
+                    </div>
+                </Field>
+
+                <Field className="labelInputContainer">
+                    <div className="inputSearchContainer">
+                        <Label>Cast</Label>
+                        <Input 
+                            id="cast"
+                            name="cast"
+                            type="text"
+                            value={castInput}
+                            onChange={(e) => setCastInput(e.target.value)}
+                        />
+                        <Button type="button" className="castBtn" onClick={handleCastInput}>X</Button>
+                    </div>
+
+                    <div className="castContainer">
+                        {formik.values.cast.map(( cast, id ) => (
+                            <Button
+                                id="castItem"
+                                key={id}
+                                type="button"
+                                className="castItem"
+                                onClick={() => handleCastRemove(cast)}
+                            >{cast} X</Button>
                         ))}
                     </div>
                 </Field>
