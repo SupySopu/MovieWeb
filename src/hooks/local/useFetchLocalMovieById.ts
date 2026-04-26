@@ -3,7 +3,7 @@ import { Serverservice } from "../../service/server/serverService"
 
 export const useFetchLocalMovieById = (id: string) => {
     const query = useQuery({
-        queryKey: ["film", id],
+        queryKey: ["localMovie", id],
         queryFn: () => Serverservice.getLocalMovieById(id),
     })
 
