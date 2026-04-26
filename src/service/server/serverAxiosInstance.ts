@@ -17,6 +17,8 @@ serverAxiosInstance.interceptors.response.use(
     },
 );
 
+console.log("Configured Local URL:", URL.local);
+
 serverAxiosInstance.interceptors.request.use(
     (config) => {
         console.log(`🚀 JSON DB Response: ${config.method?.toUpperCase()} ${config.url}`);
