@@ -12,3 +12,11 @@ export type Cast = {
     credit_id: string,
     order: number,
 }
+
+export type CastTagLocalProps = {
+    id: number,
+    name: string,
+    character: string,
+}
+
+export type CastTagProps = Pick<Cast, "id" | "character" | "name">

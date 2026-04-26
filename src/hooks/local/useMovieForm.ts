@@ -2,7 +2,6 @@ import { useFormik } from "formik";
 import type { Genres } from "../../types/Movie";
 import { useCreateLocalMovie } from "./useCreateLocalMovie";
 import { useState } from "react";
-import { useFetchApiGenre } from "../api/useFetchApiGenre";
 
 interface MovieForm {
     title: string,
